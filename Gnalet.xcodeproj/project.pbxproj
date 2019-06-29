@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		38070DE222C7FE32006935F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38070DE122C7FE32006935F2 /* AppDelegate.swift */; };
-		38070DE422C7FE32006935F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38070DE322C7FE32006935F2 /* ViewController.swift */; };
 		38070DE722C7FE32006935F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38070DE522C7FE32006935F2 /* Main.storyboard */; };
 		38070DE922C7FE35006935F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38070DE822C7FE35006935F2 /* Assets.xcassets */; };
 		38070DEC22C7FE35006935F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38070DEA22C7FE35006935F2 /* LaunchScreen.storyboard */; };
 		38070DF722C7FE35006935F2 /* GnaletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38070DF622C7FE35006935F2 /* GnaletTests.swift */; };
+		38070E0222C800D5006935F2 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38070E0122C800D5006935F2 /* HomeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +28,6 @@
 /* Begin PBXFileReference section */
 		38070DDE22C7FE32006935F2 /* Gnalet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gnalet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38070DE122C7FE32006935F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		38070DE322C7FE32006935F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		38070DE622C7FE32006935F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		38070DE822C7FE35006935F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38070DEB22C7FE35006935F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +35,7 @@
 		38070DF222C7FE35006935F2 /* GnaletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GnaletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		38070DF622C7FE35006935F2 /* GnaletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GnaletTests.swift; sourceTree = "<group>"; };
 		38070DF822C7FE35006935F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38070E0122C800D5006935F2 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,11 +78,11 @@
 			isa = PBXGroup;
 			children = (
 				38070DE122C7FE32006935F2 /* AppDelegate.swift */,
-				38070DE322C7FE32006935F2 /* ViewController.swift */,
 				38070DE522C7FE32006935F2 /* Main.storyboard */,
 				38070DE822C7FE35006935F2 /* Assets.xcassets */,
 				38070DEA22C7FE35006935F2 /* LaunchScreen.storyboard */,
 				38070DED22C7FE35006935F2 /* Info.plist */,
+				38070E0122C800D5006935F2 /* HomeVC.swift */,
 			);
 			path = Gnalet;
 			sourceTree = "<group>";
@@ -197,8 +197,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38070DE422C7FE32006935F2 /* ViewController.swift in Sources */,
 				38070DE222C7FE32006935F2 /* AppDelegate.swift in Sources */,
+				38070E0222C800D5006935F2 /* HomeVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +363,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MB46J93Q7Z;
 				INFOPLIST_FILE = Gnalet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -381,6 +382,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MB46J93Q7Z;
 				INFOPLIST_FILE = Gnalet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
