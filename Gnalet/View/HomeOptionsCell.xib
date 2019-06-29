@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeOptionsCell" rowHeight="83" id="KGk-i7-Jjw" customClass="HomeOptionsCell" customModule="Gnalet" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="353" height="83"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="353" height="82.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i1v-gd-OkB">
+                        <rect key="frame" x="24" y="8" width="305" height="66.5"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="wCR-VO-KBU">
+                                <rect key="frame" x="24" y="8.5" width="257" height="50"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="plt-9F-u0c">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="6Ob-qU-s7e"/>
+                                            <constraint firstAttribute="height" constant="50" id="auH-6D-NZ2"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gih-jf-m9w">
+                                        <rect key="frame" x="79" y="13" width="178" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.050980392159999999" green="0.2784313725" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="wCR-VO-KBU" firstAttribute="leading" secondItem="i1v-gd-OkB" secondAttribute="leading" constant="24" id="RCf-Cg-r2r"/>
+                            <constraint firstAttribute="trailing" secondItem="wCR-VO-KBU" secondAttribute="trailing" constant="24" id="oDI-F0-XrO"/>
+                            <constraint firstItem="wCR-VO-KBU" firstAttribute="centerY" secondItem="i1v-gd-OkB" secondAttribute="centerY" id="rbU-Cq-mnO"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="i1v-gd-OkB" secondAttribute="trailing" constant="24" id="55D-7A-Jix"/>
+                    <constraint firstItem="i1v-gd-OkB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="7LR-1i-OC7"/>
+                    <constraint firstAttribute="bottom" secondItem="i1v-gd-OkB" secondAttribute="bottom" constant="8" id="7aA-cC-H9R"/>
+                    <constraint firstItem="i1v-gd-OkB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="T9q-3q-txv"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="iconimageView" destination="plt-9F-u0c" id="pXu-1n-LPk"/>
+                <outlet property="optionlable" destination="gih-jf-m9w" id="dMU-VS-gGl"/>
+                <outlet property="ovarlay" destination="i1v-gd-OkB" id="4gj-Li-s0W"/>
+            </connections>
+            <point key="canvasLocation" x="164" y="172.26386806596702"/>
+        </tableViewCell>
+    </objects>
+</document>
