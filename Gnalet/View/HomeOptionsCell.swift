@@ -16,6 +16,7 @@ class HomeOptionsCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         ovarlay.addShadow()
+        ovarlay.addCorner()
         // Initialization code
     }
 
@@ -23,6 +24,11 @@ class HomeOptionsCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func configureView(option:Options){
+        optionlable.text = option.name
+        iconimageView.image = UIImage(named: option.icon)
     }
     
 }

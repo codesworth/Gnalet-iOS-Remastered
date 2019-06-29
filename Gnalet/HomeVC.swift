@@ -10,13 +10,20 @@ import UIKit
 
 class HomeVC: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    private var options = Options.defaultOptions
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.register(UINib(nibName: "\(HomeOptionsCell.self)", bundle: nil), forCellReuseIdentifier: "\(HomeOptionsCell.self)")
+        tableView.delegate = self
+        tableView.dataSource = self
         // Do any additional setup after loading the view.
     }
     
 
+    @IBAction func aboutPressed(_ sender: Any) {
+        
+    }
     /*
     // MARK: - Navigation
 
@@ -27,4 +34,31 @@ class HomeVC: UIViewController {
     }
     */
 
+}
+
+
+
+
+extension HomeVC:UITableViewDelegate, UITableViewDataSource{
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return options.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "\(HomeOptionsCell.self)", for: indexPath) as? HomeOptionsCell{
+            let option = options[indexPath.row]
+            cell.configureView(option:option)
+            return cell
+        }
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90
+    }
 }
