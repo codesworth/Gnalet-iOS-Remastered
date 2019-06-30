@@ -13,15 +13,18 @@ class IssueSelectVC: UIViewController {
     private lazy var tableView:UITableView = {
         let tab = UITableView(frame: .zero)
         tab.backgroundColor = .clear
+        tab.separatorStyle = .none
         tab.register(UINib(nibName: "\(CategoryCell.self)", bundle: nil), forCellReuseIdentifier: "\(CategoryCell.self)")
         return tab
     }()
     
-    
+    var header:String = ""
     private var categories = Category.allCategories
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
+        navigationItem.title = header
         view.addSubview(tableView)
         tableView.layout{
             $0.top == view.topAnchor
@@ -71,8 +74,12 @@ extension IssueSelectVC:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 60
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = ReportFormVC()
+        vc.navigationItem.title = "SANITATION"
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

@@ -17,6 +17,8 @@
 		38070E0B22C80172006935F2 /* HomeOptionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38070E0922C80172006935F2 /* HomeOptionsCell.xib */; };
 		38070E0E22C80215006935F2 /* UIKit+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38070E0D22C80215006935F2 /* UIKit+Extensions.swift */; };
 		38070E1022C80607006935F2 /* HomeOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38070E0F22C80607006935F2 /* HomeOptions.swift */; };
+		38070E1322C8B966006935F2 /* BasicTextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38070E1222C8B966006935F2 /* BasicTextInput.swift */; };
+		38070E1522C8C315006935F2 /* ReportFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38070E1422C8C315006935F2 /* ReportFormVC.swift */; };
 		38B76AF722C819A000AB68D8 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B76AF522C819A000AB68D8 /* CategoryCell.swift */; };
 		38B76AF822C819A000AB68D8 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38B76AF622C819A000AB68D8 /* CategoryCell.xib */; };
 		38B76AFA22C81E5A00AB68D8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B76AF922C81E5A00AB68D8 /* Category.swift */; };
@@ -51,6 +53,8 @@
 		38070E0922C80172006935F2 /* HomeOptionsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeOptionsCell.xib; sourceTree = "<group>"; };
 		38070E0D22C80215006935F2 /* UIKit+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+Extensions.swift"; sourceTree = "<group>"; };
 		38070E0F22C80607006935F2 /* HomeOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeOptions.swift; sourceTree = "<group>"; };
+		38070E1222C8B966006935F2 /* BasicTextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTextInput.swift; sourceTree = "<group>"; };
+		38070E1422C8C315006935F2 /* ReportFormVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportFormVC.swift; sourceTree = "<group>"; };
 		38B76AF522C819A000AB68D8 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		38B76AF622C819A000AB68D8 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		38B76AF922C81E5A00AB68D8 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 				38070DE122C7FE32006935F2 /* AppDelegate.swift */,
 				38070E0122C800D5006935F2 /* HomeVC.swift */,
 				38B76AFD22C8228200AB68D8 /* IssueSelectVC.swift */,
+				38070E1422C8C315006935F2 /* ReportFormVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 		38070E0422C80111006935F2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				38070E1122C8B92B006935F2 /* Forms */,
 				38070DE522C7FE32006935F2 /* Main.storyboard */,
 				38070E0822C80172006935F2 /* HomeOptionsCell.swift */,
 				38070E0922C80172006935F2 /* HomeOptionsCell.xib */,
@@ -173,6 +179,14 @@
 				38070E0D22C80215006935F2 /* UIKit+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		38070E1122C8B92B006935F2 /* Forms */ = {
+			isa = PBXGroup;
+			children = (
+				38070E1222C8B966006935F2 /* BasicTextInput.swift */,
+			);
+			path = Forms;
 			sourceTree = "<group>";
 		};
 		38B76AFF22C8976500AB68D8 /* Frameworks */ = {
@@ -299,9 +313,11 @@
 				38B76AFE22C8228200AB68D8 /* IssueSelectVC.swift in Sources */,
 				38B76B0422C8979600AB68D8 /* LayoutProperty.swift in Sources */,
 				38070DE222C7FE32006935F2 /* AppDelegate.swift in Sources */,
+				38070E1522C8C315006935F2 /* ReportFormVC.swift in Sources */,
 				38070E0A22C80172006935F2 /* HomeOptionsCell.swift in Sources */,
 				38070E0E22C80215006935F2 /* UIKit+Extensions.swift in Sources */,
 				38B76B0522C8979600AB68D8 /* Protocols.swift in Sources */,
+				38070E1322C8B966006935F2 /* BasicTextInput.swift in Sources */,
 				38070E1022C80607006935F2 /* HomeOptions.swift in Sources */,
 				38070E0222C800D5006935F2 /* HomeVC.swift in Sources */,
 				38B76AF722C819A000AB68D8 /* CategoryCell.swift in Sources */,

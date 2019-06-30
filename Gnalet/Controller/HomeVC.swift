@@ -58,7 +58,23 @@ extension HomeVC:UITableViewDelegate, UITableViewDataSource{
         return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let index = indexPath.row
+        let opt = options[index]
+        switch index {
+        case 0:
+            let vc = IssueSelectVC()
+            vc.header = opt.name
+            navigationController?.pushViewController(vc, animated: true)
+            break
+        default:
+            break
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
     }
+    
+    
 }
