@@ -15,8 +15,9 @@ class HomeOptionsCell: UITableViewCell {
     @IBOutlet weak var iconimageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        //ovarlay.addCorner(hasShadow:true)
         ovarlay.addShadow()
-        ovarlay.addCorner()
+        
         // Initialization code
     }
 

@@ -11,25 +11,40 @@ import UIKit
 
 extension UIView{
     
-    func addShadow(plansRounding:Bool, _ opacity:Float = 0.45, _ color:UIColor = UIColor.black, _ radius:CGFloat = 4, _ offset:CGSize = CGSize(width: 0, height: 3)){
-        if plansRounding{
+    func addShadow(_ opacity:Float = 0.45, _ color:UIColor = UIColor.black, _ radius:CGFloat = 4, _ offset:CGSize = CGSize(width: 0, height: 3)){
+//        if plansRounding{
+//            let layer = CALayer()
+//            layer.shadowOpacity = opacity
+//            layer.shadowColor = color.cgColor
+//            layer.shadowRadius = radius
+//            layer.shadowOffset = offset
+//            self.layer.addSublayer(layer)
+//        }else{
+        layer.shadowOpacity = opacity
+        layer.shadowColor = color.cgColor
+        layer.shadowRadius = radius
+        layer.shadowOffset = offset
+        //}
+        
+    }
+    
+    func addCorner(hasShadow:Bool, _ radius:CGFloat = 5 ){
+        if hasShadow{
             let layer = CALayer()
-            layer.shadowOpacity = opacity
-            layer.shadowColor = color.cgColor
-            layer.shadowRadius = radius
-            layer.shadowOffset = offset
+            clipsToBounds = true
+            layer.cornerRadius = radius
             self.layer.addSublayer(layer)
         }else{
-            layer.shadowOpacity = opacity
-            layer.shadowColor = color.cgColor
-            layer.shadowRadius = radius
-            layer.shadowOffset = offset
+            clipsToBounds = true
+            layer.cornerRadius = radius
         }
         
     }
     
-    func addCorner(_ radius:CGFloat = 5 ){
-        clipsToBounds = true
-        layer.cornerRadius = radius
+    
+    func layout(_ invalidatePrevious:Bool = false,using closure:(LayoutProxy) -> Void){
+        if invalidatePrevious{removeConstraints(self.constraints)}
+        translatesAutoresizingMaskIntoConstraints = false
+        closure(LayoutProxy(view:self))
     }
 }
