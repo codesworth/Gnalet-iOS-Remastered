@@ -55,3 +55,23 @@ extension UIColor{
         return #colorLiteral(red: 0.03542086482, green: 0.3643639088, blue: 0.6931433082, alpha: 1)
     }
 }
+
+
+
+extension UIScreen{
+    
+    static var height:CGFloat{
+        return main.bounds.height
+    }
+    
+    static var width:CGFloat{
+        return main.bounds.width
+    }
+}
+
+
+extension UIApplication{
+    static var window:UIWindow?{
+        return shared.keyWindow
+    }
+}

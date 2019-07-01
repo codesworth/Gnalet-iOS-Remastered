@@ -51,11 +51,10 @@ class GeneralReportView: UIView {
         return input
     }()
     
-//    private lazy var regionPicker:UIPickerView = {
-//        let picker = UIPickerView(frame: .zero)
-//        picker.backgroundColor = .white
-//
-//    }()
+    private lazy var regionPicker:RegionPickerInput = {
+        let picker = RegionPickerInput(frame: .zero)
+        return picker
+    }()
     
     private lazy var submitbutton:UIButton = {
         let button =  UIButton(frame: .zero)
@@ -84,6 +83,7 @@ class GeneralReportView: UIView {
         contentView.addSubview(emmergencylable)
         contentView.addSubview(locationInput)
         contentView.addSubview(descriptionInput)
+        contentView.addSubview(regionPicker)
         contentView.addSubview(submitbutton)
     }
     
@@ -130,6 +130,13 @@ class GeneralReportView: UIView {
             $0.leading == contentView.leadingAnchor + 8
             $0.trailing == contentView.trailingAnchor - 8
             $0.height |=| 140
+        }
+        
+        regionPicker.layout{
+            $0.top == descriptionInput.bottomAnchor + 12
+            $0.leading == contentView.leadingAnchor + 8
+            $0.trailing == contentView.trailingAnchor - 8
+            $0.height |=| 40
         }
         
         submitbutton.layout{

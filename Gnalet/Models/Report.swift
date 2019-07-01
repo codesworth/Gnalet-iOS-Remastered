@@ -33,7 +33,7 @@ struct Report {
     let description:String
     let imageLink:String
     let region:String
-    let supCode:Int
+    let regionCode:String
     let subAdminArea:String
     let status:Status
     let reporter:String
@@ -55,7 +55,7 @@ extension Report{
         case description
         case imageLink
         case region
-        case supCode
+        case regionCode
         case subAdminArea
         case status
         case reporter
@@ -88,7 +88,7 @@ extension Report{
         "Western Region"
     ]
     
-    static let SupCodes = [
+    static let RegionCodes = [
         "AHR",
         "AR",
         "BER",
@@ -107,25 +107,25 @@ extension Report{
         "WR",
     ]
     
-    static func getSupCode(at index:Int)->String{
-        guard index < SupCodes.endIndex else{
+    static func getRegionCode(at index:Int)->String{
+        guard index < RegionCodes.endIndex else{
             return "GAR"
         }
-        return SupCodes[index]
+        return RegionCodes[index]
     }
     
     static func getSupCode(for region:String)->String{
         guard let index = Regions.firstIndex(of: region) else {return "GAR"}
-        return SupCodes[index]
+        return RegionCodes[index]
     }
     
-    static func getSupBody(for code:String)->String{
-        guard let index = SupCodes.firstIndex(of: code) else {return "Greater Accra Region"}
+    static func getRegion(for code:String)->String{
+        guard let index = RegionCodes.firstIndex(of: code) else {return "Greater Accra Region"}
         return Regions[index]
     }
     
     
-    static func getSupbody(at index:Int)->String{
+    static func getRegion(at index:Int)->String{
         guard index < Regions.endIndex else{
             return "Greater Accra Region"
         }

@@ -19,6 +19,7 @@
 		38070E1022C80607006935F2 /* HomeOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38070E0F22C80607006935F2 /* HomeOptions.swift */; };
 		38070E1322C8B966006935F2 /* BasicTextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38070E1222C8B966006935F2 /* BasicTextInput.swift */; };
 		38070E1522C8C315006935F2 /* ReportFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38070E1422C8C315006935F2 /* ReportFormVC.swift */; };
+		3835A76022CA744B00521391 /* RegionPickerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3835A75F22CA744B00521391 /* RegionPickerInput.swift */; };
 		38801ADE22C90C61001CABA2 /* TextViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38801ADD22C90C61001CABA2 /* TextViewInput.swift */; };
 		38801AE022CA4524001CABA2 /* Foundation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38801ADF22CA4524001CABA2 /* Foundation+Extensions.swift */; };
 		38801AE222CA486C001CABA2 /* GeneralReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38801AE122CA486C001CABA2 /* GeneralReportView.swift */; };
@@ -61,6 +62,7 @@
 		38070E0F22C80607006935F2 /* HomeOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeOptions.swift; sourceTree = "<group>"; };
 		38070E1222C8B966006935F2 /* BasicTextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTextInput.swift; sourceTree = "<group>"; };
 		38070E1422C8C315006935F2 /* ReportFormVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportFormVC.swift; sourceTree = "<group>"; };
+		3835A75F22CA744B00521391 /* RegionPickerInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionPickerInput.swift; sourceTree = "<group>"; };
 		38801ADD22C90C61001CABA2 /* TextViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewInput.swift; sourceTree = "<group>"; };
 		38801ADF22CA4524001CABA2 /* Foundation+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation+Extensions.swift"; sourceTree = "<group>"; };
 		38801AE122CA486C001CABA2 /* GeneralReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralReportView.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				38801ADD22C90C61001CABA2 /* TextViewInput.swift */,
 				38801AE322CA493E001CABA2 /* ImagePickerView.swift */,
 				38801AE522CA4C4F001CABA2 /* LocationTextinput.swift */,
+				3835A75F22CA744B00521391 /* RegionPickerInput.swift */,
 			);
 			path = Forms;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				38801AE822CA5D13001CABA2 /* Report.swift in Sources */,
 				38B76B0522C8979600AB68D8 /* Protocols.swift in Sources */,
 				38801AE022CA4524001CABA2 /* Foundation+Extensions.swift in Sources */,
+				3835A76022CA744B00521391 /* RegionPickerInput.swift in Sources */,
 				38070E1322C8B966006935F2 /* BasicTextInput.swift in Sources */,
 				38070E1022C80607006935F2 /* HomeOptions.swift in Sources */,
 				38070E0222C800D5006935F2 /* HomeVC.swift in Sources */,
