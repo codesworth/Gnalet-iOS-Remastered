@@ -18,7 +18,7 @@ class LocationTextinput: UIView {
     }()
     
     private lazy var button:UIButton = { [unowned self] by in
-        let button = UIButton(frame: .zero)
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 60))
         button.backgroundColor = .primary
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
@@ -27,7 +27,12 @@ class LocationTextinput: UIView {
         return button
     }(())
     
-    private lazy var stack:UIStackView = {}()
+    private lazy var stack:UIStackView = {
+        let stack = UIStackView()
+        stack.alignment = .fill
+        stack.axis = .horizontal
+        stack.distribution = .fillProportionally
+    }()
     
     
     //MARK: - Init
@@ -41,26 +46,41 @@ class LocationTextinput: UIView {
     
     private func initialize(){
         backgroundColor = .white
-        addSubview(textField)
-        addSubview(button)
+        addSubview(stack)
+        stack.addArrangedSubview(textField)
+        stack.addArrangedSubview(button)
+//        addSubview(textField)
+//        addSubview(button)
     }
     
     //MARK:- LAYOUT
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        button.layout{
-            $0.trailing == trailingAnchor
-            $0.top == topAnchor
-            $0.bottom == bottomAnchor
-            $0.width |=| 100
-        }
-        textField.layout{
+        stack.layout{
             $0.leading == leadingAnchor
-            $0.trailing == button.leadingAnchor
             $0.top == topAnchor
+            $0.trailing == trailingAnchor
             $0.bottom == bottomAnchor
         }
+        
+//        button.layout{
+//            $0.trailing == trailingAnchor
+//            $0.top == topAnchor
+//            $0.bottom == bottomAnchor
+//            $0.width |=| 100
+//        }
+//        textField.layout{
+//            $0.leading == leadingAnchor
+//            $0.trailing == button.leadingAnchor
+//            $0.top == topAnchor
+//            $0.bottom == bottomAnchor
+//        }
+    }
+    
+    override func didMoveToWindow() {
+        super.didMoveToWindow()
+        button.isHidden = true
     }
     
     //MARK:- SELECTOR

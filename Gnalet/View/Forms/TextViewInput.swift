@@ -19,6 +19,13 @@ class TextViewInput:UIView{
         return label
     }()
     
+    private lazy var line:UIView = {
+        let line = UIView(frame: .zero)
+        line.backgroundColor = .black
+        line.clipsToBounds = true
+        return line
+    }()
+    
     private lazy var textView:UITextView = {
         let view = UITextView(frame: .zero)
         view.font = .systemFont(ofSize: 16, weight: .regular)
@@ -27,7 +34,9 @@ class TextViewInput:UIView{
         return view
     }()
     
+    //MARK: - DECLS
     var topConstraint:NSLayoutConstraint!
+    var heightConstraint:NSLayoutConstraint!
     
     var placeholder:String = .empty{
         didSet{
@@ -36,5 +45,42 @@ class TextViewInput:UIView{
         }
     }
     
+    
+    //MARK:- INIT
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        initialize()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    private func initialize(){
+        addSubview(textView)
+        addSubview(label)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        line.layout{
+            $0.bottom == bottomAnchor
+            $0.leading == leadingAnchor + paddingH
+            $0.trailing == trailingAnchor - paddingH
+            $0.height |=| 1
+        }
+        
+        textView.layout{
+            $0.leading == leadingAnchor + paddingH
+            $0.trailing == trailingAnchor - paddingH
+            $0.bottom == line.topAnchor
+           heightConstraint = ($0.height |=| 40).self
+        }
+        label.translatesAutoresizingMaskIntoConstraints = false
+        topConstraint = label.topAnchor.constraint(equalTo: topAnchor, constant: 50)
+        let leadConstraint = label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: paddingH)
+        NSLayoutConstraint.activate([topConstraint,leadConstraint])
+    }
     
 }
