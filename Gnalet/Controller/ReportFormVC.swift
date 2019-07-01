@@ -40,6 +40,11 @@ class ReportFormVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        Subscription.main.post(suscription: .removePickerIfPresent, object: nil)
+    }
 
     /*
     // MARK: - Navigation

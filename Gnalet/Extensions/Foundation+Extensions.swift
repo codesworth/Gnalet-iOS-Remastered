@@ -14,3 +14,11 @@ extension String{
         return ""
     }
 }
+
+
+
+extension AnyHashable{
+    static var info:String{
+        return "info"
+    }
+}

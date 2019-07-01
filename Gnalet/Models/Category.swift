@@ -12,6 +12,22 @@ struct Category {
     let title:String
     let info:String
     
+    var header:String{
+        if title == ABANDONED_ACCIDENT{
+            return VEHICULAR
+        }
+        
+        if title == GSA{
+            return "GSA"
+        }
+        
+        if title == INDESCIPLINE_BEHAVIOUR{
+            return "INDISCIPLINE"
+        }
+        
+        return title
+    }
+    
     static let allCategories = [
         Category(title: ABANDONED_ACCIDENT, info: INFO_VEHICULAR),
         Category(title: INDESCIPLINE_BEHAVIOUR, info: INFO_INDISCIPLINE),

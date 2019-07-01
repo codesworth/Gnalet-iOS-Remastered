@@ -78,8 +78,9 @@ extension IssueSelectVC:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cat = categories[indexPath.row]
         let vc = ReportFormVC(type: .general)
-        vc.navigationItem.title = "SANITATION"
+        vc.navigationItem.title = cat.header
         navigationController?.pushViewController(vc, animated: true)
     }
 }

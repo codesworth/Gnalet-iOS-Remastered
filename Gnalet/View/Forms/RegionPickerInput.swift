@@ -24,6 +24,7 @@ class RegionPickerInput:UIView{
         return lable
     }(())
     
+    
     lazy var picker:UIPickerView = {
         let picker = UIPickerView(frame: CGRect(x: 0, y: 40, width: UIScreen.width, height: 210))
         picker.delegate = self
@@ -54,6 +55,7 @@ class RegionPickerInput:UIView{
     
     fileprivate let regions = Report.Regions
     fileprivate let regionCodes = Report.RegionCodes
+    private var pickerIsShowing = false
     
     
     //MARK:- Init
@@ -79,6 +81,7 @@ class RegionPickerInput:UIView{
         pickerContainer.addSubview(doneToolbar)
         pickerContainer.addSubview(picker)
         UIApplication.window?.addSubview(pickerContainer)
+        subscribeTo(subscription: .removePickerIfPresent, selector: #selector(dismissPickerIfPresent(_:)))
     }
     
     //MARK: - LAYOUT
@@ -95,12 +98,18 @@ class RegionPickerInput:UIView{
     
     //MARK:- SELECTOR
     @objc func labletapped(_ recognizer:UITapGestureRecognizer){
+        pickerIsShowing = true
         UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
             self.pickerContainer.frame.origin.y -= 300
         }, completion: nil)
     }
     
     
+    @objc func dismissPickerIfPresent(_ notification:Notification){
+        if pickerIsShowing{
+            dismissPicker()
+        }
+    }
     
     
     
@@ -108,6 +117,11 @@ class RegionPickerInput:UIView{
         UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
             self.pickerContainer.frame.origin.y += 300
         }, completion: nil)
+        pickerIsShowing = false
+    }
+    
+    deinit {
+        unsubscribe()
     }
 }
 
