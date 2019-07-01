@@ -78,7 +78,7 @@ extension IssueSelectVC:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = ReportFormVC()
+        let vc = ReportFormVC(type: .general)
         vc.navigationItem.title = "SANITATION"
         navigationController?.pushViewController(vc, animated: true)
     }

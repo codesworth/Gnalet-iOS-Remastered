@@ -16,6 +16,7 @@ class TextViewInput:UIView{
         let label = UILabel(frame: .zero)
         label.font = .systemFont(ofSize: 12, weight: .regular)
         label.textColor = .darkText
+        label.text = "Decription"
         return label
     }()
     
@@ -60,6 +61,7 @@ class TextViewInput:UIView{
     private func initialize(){
         addSubview(textView)
         addSubview(label)
+        addSubview(line)
     }
     
     override func layoutSubviews() {
@@ -75,10 +77,10 @@ class TextViewInput:UIView{
             $0.leading == leadingAnchor + paddingH
             $0.trailing == trailingAnchor - paddingH
             $0.bottom == line.topAnchor
-           heightConstraint = ($0.height |=| 40).self
+           heightConstraint = ($0.height |=| 120).self
         }
         label.translatesAutoresizingMaskIntoConstraints = false
-        topConstraint = label.topAnchor.constraint(equalTo: topAnchor, constant: 50)
+        topConstraint = label.topAnchor.constraint(equalTo: topAnchor, constant: 0)
         let leadConstraint = label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: paddingH)
         NSLayoutConstraint.activate([topConstraint,leadConstraint])
     }

@@ -32,12 +32,20 @@ class LocationTextinput: UIView {
         stack.alignment = .fill
         stack.axis = .horizontal
         stack.distribution = .fillProportionally
+        return stack
     }()
     
+    
+    var placeholder:String =  .empty{
+        didSet{
+            textField.placeholder = "Location"
+        }
+    }
     
     //MARK: - Init
     override init(frame: CGRect) {
         super.init(frame:frame)
+        initialize()
     }
     
     required init?(coder: NSCoder) {

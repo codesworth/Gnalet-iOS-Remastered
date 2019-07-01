@@ -10,21 +10,32 @@ import UIKit
 
 class ReportFormVC: UIViewController {
 
-    lazy var form:BasicTextInput = {
-        let form = BasicTextInput(frame: .zero)
-        form.placeholder = "My name is Lach"
+    //MARK:- Init
+    init(type:Report.Types) {
+        self.type = type
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    private var type:Report.Types = .general
+    
+    private lazy var generalForm:GeneralReportView = {
+        let form = GeneralReportView(frame: .zero)
         return form
     }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        view.addSubview(form)
-        let width = view.frame.width - 50
-        form.layout{
-            $0.centerX == view.centerXAnchor
-            $0.centerY == view.centerYAnchor
-            $0.height |=| 60
-            $0.width |=| width
+        view.addSubview(generalForm)
+        generalForm.layout{
+            $0.top == view.topAnchor
+            $0.bottom == view.bottomAnchor
+            $0.leading == view.leadingAnchor
+            $0.trailing == view.trailingAnchor
         }
         // Do any additional setup after loading the view.
     }
