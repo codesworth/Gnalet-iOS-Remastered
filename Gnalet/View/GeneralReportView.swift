@@ -134,13 +134,13 @@ class GeneralReportView: UIView {
         
         regionPicker.layout{
             $0.top == descriptionInput.bottomAnchor + 12
-            $0.leading == contentView.leadingAnchor + 8
-            $0.trailing == contentView.trailingAnchor - 8
+            $0.leading == contentView.leadingAnchor + 16
+            $0.trailing == contentView.trailingAnchor - 16
             $0.height |=| 40
         }
         
         submitbutton.layout{
-            $0.top == descriptionInput.bottomAnchor + 12
+            $0.top == regionPicker.bottomAnchor + 12
             $0.centerX == contentView.centerXAnchor
             $0.height |=| 40
             $0.width |=| 120

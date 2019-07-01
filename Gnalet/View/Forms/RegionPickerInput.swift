@@ -19,6 +19,8 @@ class RegionPickerInput:UIView{
         lable.text = "Select Region"
         lable.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(labletapped(_:)))
+        tap.numberOfTapsRequired = 1
+        lable.addGestureRecognizer(tap)
         return lable
     }(())
     
@@ -28,6 +30,17 @@ class RegionPickerInput:UIView{
         picker.dataSource = self
         picker.backgroundColor = .white
         return picker
+    }()
+    
+    lazy var doneToolbar: UIToolbar = {
+        return UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+    }()
+    
+    lazy var flexSpace:UIBarButtonItem = {
+        return UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+    }()
+    lazy var  done:UIBarButtonItem = {
+        return  UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(dismissPicker))
     }()
     
     //MARK: - DECLS
@@ -49,6 +62,13 @@ class RegionPickerInput:UIView{
     
     private func initialize(){
         addSubview(label)
+        doneToolbar.barStyle = .default
+        
+        let items = [flexSpace, done]
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+        
+        picker.addSubview(doneToolbar)
         UIApplication.window?.addSubview(picker)
     }
     
@@ -75,7 +95,7 @@ class RegionPickerInput:UIView{
     
     
     
-    func dismissPicker(){
+    @objc func dismissPicker(){
         UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
             self.picker.frame.origin.y += 350
         }, completion: nil)
@@ -101,7 +121,6 @@ extension RegionPickerInput:UIPickerViewDelegate,UIPickerViewDataSource{
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let region = regions[row]
         label.text = region
-        dismissPicker()
         //
     }
 }
