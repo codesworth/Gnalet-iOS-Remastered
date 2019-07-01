@@ -12,6 +12,8 @@ class GeneralReportView: UIView {
     
     // MARK:- Components
     
+    private let marginVertical:CGFloat = 20
+    
     private lazy var scrollView:UIScrollView = {
         let scroll = UIScrollView()
         scroll.bounces = true
@@ -64,6 +66,8 @@ class GeneralReportView: UIView {
         return button
     }()
 
+    var locheight:CGFloat = 38
+    private var descHeight:NSLayoutConstraint!
 
     // MARK: - Init
     override init(frame: CGRect) {
@@ -85,6 +89,17 @@ class GeneralReportView: UIView {
         contentView.addSubview(descriptionInput)
         contentView.addSubview(regionPicker)
         contentView.addSubview(submitbutton)
+        NotificationCenter.default.addObserver(self, selector: #selector(increaseHeight(_:)), name: UITextView.textDidChangeNotification, object: nil)
+    }
+    
+    @objc func increaseHeight(_ notification:Notification){
+        guard let textview = notification.object as? UITextView else {return}
+        let height = textview.text.height(withConstrainedWidth: UIScreen.width - 40, font: .systemFont(ofSize: 16, weight: .regular))
+        print("The height is: \(height)j")
+        if height > self.locheight{
+            self.descHeight.constant += 25
+            locheight = height
+        }
     }
     
     //MARK: - LAYOUT
@@ -114,33 +129,33 @@ class GeneralReportView: UIView {
             
         }
         emmergencylable.layout{
-            $0.top == imagePickerView.bottomAnchor + 12
+            $0.top == imagePickerView.bottomAnchor + marginVertical
             $0.centerX == contentView.centerXAnchor
         }
         
         locationInput.layout{
-            $0.top == emmergencylable.bottomAnchor + 12
+            $0.top == emmergencylable.bottomAnchor + marginVertical
             $0.leading == contentView.leadingAnchor + 8
             $0.trailing == contentView.trailingAnchor - 8
             $0.height |=| 60
         }
         
-        descriptionInput.layout{
-            $0.top == locationInput.bottomAnchor + 12
-            $0.leading == contentView.leadingAnchor + 8
-            $0.trailing == contentView.trailingAnchor - 8
-            $0.height |=| 140
-        }
+        let top = descriptionInput.topAnchor.constraint(equalTo: locationInput.bottomAnchor, constant: marginVertical)
+        let leading = descriptionInput.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8)
+        let trailing = descriptionInput.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8)
+        descHeight = descriptionInput.heightAnchor.constraint(equalToConstant: 60)
+        descriptionInput.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([top,leading,trailing,descHeight])
         
         regionPicker.layout{
-            $0.top == descriptionInput.bottomAnchor + 12
+            $0.top == descriptionInput.bottomAnchor + marginVertical
             $0.leading == contentView.leadingAnchor + 16
             $0.trailing == contentView.trailingAnchor - 16
             $0.height |=| 40
         }
         
         submitbutton.layout{
-            $0.top == regionPicker.bottomAnchor + 12
+            $0.top == regionPicker.bottomAnchor + marginVertical
             $0.centerX == contentView.centerXAnchor
             $0.height |=| 40
             $0.width |=| 120

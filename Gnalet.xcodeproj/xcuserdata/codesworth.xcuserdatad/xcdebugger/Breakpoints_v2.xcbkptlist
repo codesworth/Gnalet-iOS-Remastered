@@ -12,7 +12,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gnalet/View/Forms/BasicTextInput.swift"
-            timestampString = "583584155.4430701"
+            timestampString = "583705210.80381"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "106"
@@ -29,7 +29,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gnalet/View/Forms/BasicTextInput.swift"
-            timestampString = "583584155.443163"
+            timestampString = "583705210.803896"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "114"
@@ -46,7 +46,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gnalet/View/Forms/BasicTextInput.swift"
-            timestampString = "583584155.443238"
+            timestampString = "583705210.803962"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "121"
@@ -62,7 +62,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gnalet/View/Forms/RegionPickerInput.swift"
-            timestampString = "583700530.278965"
+            timestampString = "583705210.804027"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "102"
@@ -78,12 +78,12 @@
                   moduleName = "Gnalet"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/codesworth/Development/Projects/Gnalet%20Project/Gnalet/Gnalet/View/Forms/RegionPickerInput.swift"
-                  timestampString = "583696143.336015"
+                  timestampString = "583704698.6218719"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "32">
+                  startingLineNumber = "102"
+                  endingLineNumber = "102"
+                  offsetFromSymbolStart = "46">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -93,11 +93,11 @@
                   moduleName = "Gnalet"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/codesworth/Development/Projects/Gnalet%20Project/Gnalet/Gnalet/View/Forms/RegionPickerInput.swift"
-                  timestampString = "583696143.339587"
+                  timestampString = "583704698.625264"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "72"
-                  endingLineNumber = "72"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
                   offsetFromSymbolStart = "22">
                </Location>
             </Locations>
@@ -110,7 +110,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gnalet/View/Forms/RegionPickerInput.swift"
-            timestampString = "583700530.279487"
+            timestampString = "583705210.804099"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "104"
@@ -126,12 +126,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gnalet/View/Forms/RegionPickerInput.swift"
-            timestampString = "583700530.279857"
+            timestampString = "583705210.804165"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "103"
             endingLineNumber = "103"
             landmarkName = "labletapped(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gnalet/View/GeneralReportView.swift"
+            timestampString = "583705210.804232"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "increaseHeight(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gnalet/View/GeneralReportView.swift"
+            timestampString = "583705210.804292"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "increaseHeight(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
