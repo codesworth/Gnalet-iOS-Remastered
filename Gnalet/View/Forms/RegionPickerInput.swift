@@ -25,11 +25,18 @@ class RegionPickerInput:UIView{
     }(())
     
     lazy var picker:UIPickerView = {
-        let picker = UIPickerView(frame: CGRect(x: 0, y: UIScreen.height + 50, width: UIScreen.width, height: 300))
+        let picker = UIPickerView(frame: CGRect(x: 0, y: 40, width: UIScreen.width, height: 210))
         picker.delegate = self
         picker.dataSource = self
         picker.backgroundColor = .white
         return picker
+    }()
+    
+    private lazy var pickerContainer:UIView = {
+        let view = UIView(frame: CGRect(x: 0, y: UIScreen.height + 50, width: UIScreen.width, height: 250))
+        
+        view.backgroundColor = .clear
+        return view
     }()
     
     lazy var doneToolbar: UIToolbar = {
@@ -62,14 +69,16 @@ class RegionPickerInput:UIView{
     
     private func initialize(){
         addSubview(label)
+        
         doneToolbar.barStyle = .default
         
         let items = [flexSpace, done]
         doneToolbar.items = items
         doneToolbar.sizeToFit()
         
-        picker.addSubview(doneToolbar)
-        UIApplication.window?.addSubview(picker)
+        pickerContainer.addSubview(doneToolbar)
+        pickerContainer.addSubview(picker)
+        UIApplication.window?.addSubview(pickerContainer)
     }
     
     //MARK: - LAYOUT
@@ -87,7 +96,7 @@ class RegionPickerInput:UIView{
     //MARK:- SELECTOR
     @objc func labletapped(_ recognizer:UITapGestureRecognizer){
         UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
-            self.picker.frame.origin.y -= 350
+            self.pickerContainer.frame.origin.y -= 300
         }, completion: nil)
     }
     
@@ -97,7 +106,7 @@ class RegionPickerInput:UIView{
     
     @objc func dismissPicker(){
         UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
-            self.picker.frame.origin.y += 350
+            self.pickerContainer.frame.origin.y += 300
         }, completion: nil)
     }
 }
