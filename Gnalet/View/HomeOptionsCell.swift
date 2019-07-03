@@ -7,16 +7,19 @@
 //
 
 import UIKit
+import MaterialComponents
 
 class HomeOptionsCell: UITableViewCell {
 
-    @IBOutlet weak var ovarlay: UIView!
+    @IBOutlet weak var overlay: MDCCard!
+
     @IBOutlet weak var optionlable: UILabel!
     @IBOutlet weak var iconimageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         //ovarlay.addCorner(hasShadow:true)
-        ovarlay.addShadow()
+        overlay.cornerRadius = 5
+        overlay.setShadowElevation(ShadowElevation(rawValue: 4), for: .normal)
         
         // Initialization code
     }

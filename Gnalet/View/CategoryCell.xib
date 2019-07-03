@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="51.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hfh-5S-f7s">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hfh-5S-f7s" customClass="MDCCard">
                         <rect key="frame" x="8" y="4" width="304" height="43.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npR-cR-0j7">
@@ -28,7 +28,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sjO-00-7I0">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info_icon" translatesAutoresizingMaskIntoConstraints="NO" id="sjO-00-7I0">
                                 <rect key="frame" x="254" y="7" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="Nsr-SS-vgO"/>
@@ -43,6 +43,9 @@
                             <constraint firstItem="npR-cR-0j7" firstAttribute="leading" secondItem="Hfh-5S-f7s" secondAttribute="leading" constant="20" id="Nc4-Ix-2QK"/>
                             <constraint firstAttribute="trailing" secondItem="sjO-00-7I0" secondAttribute="trailing" constant="20" id="sVu-ub-SXk"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="interactable" value="NO"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -58,8 +61,12 @@
             <connections>
                 <outlet property="issueinfoImageView" destination="sjO-00-7I0" id="LbC-7G-hMK"/>
                 <outlet property="issuelable" destination="npR-cR-0j7" id="wON-wx-osJ"/>
+                <outlet property="overlay" destination="Hfh-5S-f7s" id="M7V-5m-RJh"/>
             </connections>
             <point key="canvasLocation" x="73.913043478260875" y="103.125"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="info_icon" width="300" height="300"/>
+    </resources>
 </document>

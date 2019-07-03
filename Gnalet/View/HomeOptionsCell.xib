@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14810.11" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14766.13"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,11 +16,11 @@
             <rect key="frame" x="0.0" y="0.0" width="353" height="83"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="353" height="83"/>
+                <rect key="frame" x="0.0" y="0.0" width="353" height="82.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i1v-gd-OkB">
-                        <rect key="frame" x="24" y="8" width="305" height="67"/>
+                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i1v-gd-OkB" customClass="MDCCard">
+                        <rect key="frame" x="24" y="8" width="305" height="66.5"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="wCR-VO-KBU">
                                 <rect key="frame" x="24" y="8.5" width="257" height="50"/>
@@ -45,6 +47,9 @@
                             <constraint firstAttribute="trailing" secondItem="wCR-VO-KBU" secondAttribute="trailing" constant="24" id="oDI-F0-XrO"/>
                             <constraint firstItem="wCR-VO-KBU" firstAttribute="centerY" secondItem="i1v-gd-OkB" secondAttribute="centerY" id="rbU-Cq-mnO"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="interactable" value="NO"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -60,7 +65,7 @@
             <connections>
                 <outlet property="iconimageView" destination="plt-9F-u0c" id="pXu-1n-LPk"/>
                 <outlet property="optionlable" destination="gih-jf-m9w" id="dMU-VS-gGl"/>
-                <outlet property="ovarlay" destination="i1v-gd-OkB" id="4gj-Li-s0W"/>
+                <outlet property="overlay" destination="i1v-gd-OkB" id="cZe-YK-l57"/>
             </connections>
             <point key="canvasLocation" x="164" y="172.26386806596702"/>
         </tableViewCell>

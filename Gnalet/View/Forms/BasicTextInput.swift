@@ -67,7 +67,7 @@ class BasicTextInput: UIView {
         line.layout{
             $0.bottom == bottomAnchor
             $0.leading == leadingAnchor + paddingH
-            $0.trailing == trailingAnchor - paddingH
+            $0.trailing == trailingAnchor
             $0.height |=| 1
         }
         textField.layout{

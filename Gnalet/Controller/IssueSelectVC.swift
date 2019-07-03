@@ -73,6 +73,8 @@ extension IssueSelectVC:UITableViewDelegate,UITableViewDataSource{
         return CategoryCell()
     }
     
+    
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }

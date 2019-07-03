@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MaterialComponents.MDCCard
 
-class RegionPickerInput:UIView{
+class RegionPickerInput:MDCCard{
     
     //MARK:- Components
     private lazy var label:UILabel = { [unowned self] by in
@@ -70,6 +71,8 @@ class RegionPickerInput:UIView{
     }
     
     private func initialize(){
+        setShadowElevation(ShadowElevation(4), for: .normal)
+        cornerRadius = 5
         addSubview(label)
         
         doneToolbar.barStyle = .default
@@ -89,7 +92,7 @@ class RegionPickerInput:UIView{
     override func layoutSubviews() {
         super.layoutSubviews()
         label.layout{
-            $0.leading == leadingAnchor
+            $0.leading == leadingAnchor + 8
             $0.trailing == trailingAnchor
             $0.top == topAnchor
             $0.bottom == bottomAnchor

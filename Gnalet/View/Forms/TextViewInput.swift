@@ -29,7 +29,7 @@ class TextViewInput:UIView{
     
     private lazy var textView:UITextView = {
         let view = UITextView(frame: .zero)
-        view.font = .systemFont(ofSize: 16, weight: .regular)
+        view.font = .systemFont(ofSize: 18, weight: .regular)
         view.textColor = .darkText
         view.textAlignment = .left
         return view

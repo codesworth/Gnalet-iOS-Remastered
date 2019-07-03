@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import MaterialComponents.MDCCard
 
-class ImagePickerView: UIView {
+class ImagePickerView: MDCCard {
 
     // MARK: - Components
     
     private lazy var imageview:UIImageView = { [unowned self] by in
         let imgv = UIImageView(frame: .zero)
-        imgv.contentMode = .scaleAspectFit
+        imgv.contentMode = .scaleAspectFill
         imgv.image = #imageLiteral(resourceName: "tp")
         imgv.clipsToBounds = true
         imgv.isUserInteractionEnabled = true
@@ -42,6 +43,8 @@ class ImagePickerView: UIView {
     }
     
     private func initialize(){
+        cornerRadius = 5
+        setShadowElevation(ShadowElevation(rawValue: 4), for: .normal)
         addSubview(imageview)
         backgroundColor = .white
     }

@@ -3,10 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		183500CA3028B28FD2E56B22 /* Pods_Gnalet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56616C3DB5D6E96556EA1603 /* Pods_Gnalet.framework */; };
+		3804A3FA22CCB4E300669133 /* CGPoint+Literals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3804A3F522CCB4E300669133 /* CGPoint+Literals.swift */; };
+		3804A3FB22CCB4E300669133 /* CGSize+Literals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3804A3F622CCB4E300669133 /* CGSize+Literals.swift */; };
+		3804A3FC22CCB4E300669133 /* UIEdgeInsets+Literals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3804A3F722CCB4E300669133 /* UIEdgeInsets+Literals.swift */; };
+		3804A3FD22CCB4E300669133 /* UIOffset+Literals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3804A3F822CCB4E300669133 /* UIOffset+Literals.swift */; };
+		3804A3FE22CCB4E300669133 /* CGRect+Literals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3804A3F922CCB4E300669133 /* CGRect+Literals.swift */; };
 		38070DE222C7FE32006935F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38070DE122C7FE32006935F2 /* AppDelegate.swift */; };
 		38070DE722C7FE32006935F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38070DE522C7FE32006935F2 /* Main.storyboard */; };
 		38070DE922C7FE35006935F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38070DE822C7FE35006935F2 /* Assets.xcassets */; };
@@ -27,6 +33,7 @@
 		38801AE422CA493E001CABA2 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38801AE322CA493E001CABA2 /* ImagePickerView.swift */; };
 		38801AE622CA4C4F001CABA2 /* LocationTextinput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38801AE522CA4C4F001CABA2 /* LocationTextinput.swift */; };
 		38801AE822CA5D13001CABA2 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38801AE722CA5D13001CABA2 /* Report.swift */; };
+		3886DF0122CB82FE00C49847 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3886DF0022CB82FE00C49847 /* GoogleService-Info.plist */; };
 		38B76AF722C819A000AB68D8 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B76AF522C819A000AB68D8 /* CategoryCell.swift */; };
 		38B76AF822C819A000AB68D8 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38B76AF622C819A000AB68D8 /* CategoryCell.xib */; };
 		38B76AFA22C81E5A00AB68D8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B76AF922C81E5A00AB68D8 /* Category.swift */; };
@@ -34,6 +41,7 @@
 		38B76B0422C8979600AB68D8 /* LayoutProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B76B0122C8979600AB68D8 /* LayoutProperty.swift */; };
 		38B76B0522C8979600AB68D8 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B76B0222C8979600AB68D8 /* Protocols.swift */; };
 		38B76B0622C8979600AB68D8 /* Opereators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B76B0322C8979600AB68D8 /* Opereators.swift */; };
+		961AF6DE56B5BF6977D818E6 /* Pods_GnaletTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB4A771AF1F8F6AE1322684 /* Pods_GnaletTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +55,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		26B8A3FBD7F3EBDF7A659142 /* Pods-Gnalet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gnalet.debug.xcconfig"; path = "Target Support Files/Pods-Gnalet/Pods-Gnalet.debug.xcconfig"; sourceTree = "<group>"; };
+		3804A3F522CCB4E300669133 /* CGPoint+Literals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Literals.swift"; sourceTree = "<group>"; };
+		3804A3F622CCB4E300669133 /* CGSize+Literals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize+Literals.swift"; sourceTree = "<group>"; };
+		3804A3F722CCB4E300669133 /* UIEdgeInsets+Literals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Literals.swift"; sourceTree = "<group>"; };
+		3804A3F822CCB4E300669133 /* UIOffset+Literals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIOffset+Literals.swift"; sourceTree = "<group>"; };
+		3804A3F922CCB4E300669133 /* CGRect+Literals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Literals.swift"; sourceTree = "<group>"; };
 		38070DDE22C7FE32006935F2 /* Gnalet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gnalet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38070DE122C7FE32006935F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38070DE622C7FE32006935F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,6 +85,7 @@
 		38801AE322CA493E001CABA2 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		38801AE522CA4C4F001CABA2 /* LocationTextinput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTextinput.swift; sourceTree = "<group>"; };
 		38801AE722CA5D13001CABA2 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
+		3886DF0022CB82FE00C49847 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		38B76AF522C819A000AB68D8 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		38B76AF622C819A000AB68D8 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		38B76AF922C81E5A00AB68D8 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -78,6 +93,11 @@
 		38B76B0122C8979600AB68D8 /* LayoutProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutProperty.swift; sourceTree = "<group>"; };
 		38B76B0222C8979600AB68D8 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		38B76B0322C8979600AB68D8 /* Opereators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Opereators.swift; sourceTree = "<group>"; };
+		3EB4A771AF1F8F6AE1322684 /* Pods_GnaletTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GnaletTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56616C3DB5D6E96556EA1603 /* Pods_Gnalet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gnalet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD74638CE0C98117E283FA81 /* Pods-Gnalet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gnalet.release.xcconfig"; path = "Target Support Files/Pods-Gnalet/Pods-Gnalet.release.xcconfig"; sourceTree = "<group>"; };
+		CBC4C4D729CE425EE6BFF0BE /* Pods-GnaletTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GnaletTests.debug.xcconfig"; path = "Target Support Files/Pods-GnaletTests/Pods-GnaletTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EB77BAF71CF85467EFFA5E91 /* Pods-GnaletTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GnaletTests.release.xcconfig"; path = "Target Support Files/Pods-GnaletTests/Pods-GnaletTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				183500CA3028B28FD2E56B22 /* Pods_Gnalet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,18 +113,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				961AF6DE56B5BF6977D818E6 /* Pods_GnaletTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3804A3F422CCB4E300669133 /* LiteralExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				3804A3F522CCB4E300669133 /* CGPoint+Literals.swift */,
+				3804A3F622CCB4E300669133 /* CGSize+Literals.swift */,
+				3804A3F722CCB4E300669133 /* UIEdgeInsets+Literals.swift */,
+				3804A3F822CCB4E300669133 /* UIOffset+Literals.swift */,
+				3804A3F922CCB4E300669133 /* CGRect+Literals.swift */,
+			);
+			path = LiteralExtensions;
+			sourceTree = "<group>";
+		};
 		38070DD522C7FE32006935F2 = {
 			isa = PBXGroup;
 			children = (
 				38070DE022C7FE32006935F2 /* Gnalet */,
 				38070DF522C7FE35006935F2 /* GnaletTests */,
 				38070DDF22C7FE32006935F2 /* Products */,
+				3BBC1E2077F5862D5868C33A /* Pods */,
+				F627CCBA3AE3BF85F0755A97 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -188,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				38070DED22C7FE35006935F2 /* Info.plist */,
+				3886DF0022CB82FE00C49847 /* GoogleService-Info.plist */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -224,6 +261,7 @@
 		38B76AFF22C8976500AB68D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3804A3F422CCB4E300669133 /* LiteralExtensions */,
 				38B76B0022C8979600AB68D8 /* AutoLayoutDSL */,
 			);
 			path = Frameworks;
@@ -239,6 +277,26 @@
 			path = AutoLayoutDSL;
 			sourceTree = "<group>";
 		};
+		3BBC1E2077F5862D5868C33A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				26B8A3FBD7F3EBDF7A659142 /* Pods-Gnalet.debug.xcconfig */,
+				BD74638CE0C98117E283FA81 /* Pods-Gnalet.release.xcconfig */,
+				CBC4C4D729CE425EE6BFF0BE /* Pods-GnaletTests.debug.xcconfig */,
+				EB77BAF71CF85467EFFA5E91 /* Pods-GnaletTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F627CCBA3AE3BF85F0755A97 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				56616C3DB5D6E96556EA1603 /* Pods_Gnalet.framework */,
+				3EB4A771AF1F8F6AE1322684 /* Pods_GnaletTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -246,9 +304,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38070DFB22C7FE35006935F2 /* Build configuration list for PBXNativeTarget "Gnalet" */;
 			buildPhases = (
+				6BCFA1ABEC83319924FB2051 /* [CP] Check Pods Manifest.lock */,
 				38070DDA22C7FE32006935F2 /* Sources */,
 				38070DDB22C7FE32006935F2 /* Frameworks */,
 				38070DDC22C7FE32006935F2 /* Resources */,
+				40FE737E370586ED9BD6C17D /* [CP] Embed Pods Frameworks */,
+				069E84D92444813FF1159306 /* [CP] Copy Pods Resources */,
+				3804A3F322CBA27400669133 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -263,6 +325,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38070DFE22C7FE35006935F2 /* Build configuration list for PBXNativeTarget "GnaletTests" */;
 			buildPhases = (
+				A4E8A0D2714C8C330BEB02A4 /* [CP] Check Pods Manifest.lock */,
 				38070DEE22C7FE35006935F2 /* Sources */,
 				38070DEF22C7FE35006935F2 /* Frameworks */,
 				38070DF022C7FE35006935F2 /* Resources */,
@@ -325,6 +388,7 @@
 				38070E0B22C80172006935F2 /* HomeOptionsCell.xib in Resources */,
 				38070DE922C7FE35006935F2 /* Assets.xcassets in Resources */,
 				38070DE722C7FE32006935F2 /* Main.storyboard in Resources */,
+				3886DF0122CB82FE00C49847 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,23 +401,125 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		069E84D92444813FF1159306 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gnalet/Pods-Gnalet-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gnalet/Pods-Gnalet-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gnalet/Pods-Gnalet-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3804A3F322CBA27400669133 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/Fabric/run\"\n";
+		};
+		40FE737E370586ED9BD6C17D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gnalet/Pods-Gnalet-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gnalet/Pods-Gnalet-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gnalet/Pods-Gnalet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6BCFA1ABEC83319924FB2051 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Gnalet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4E8A0D2714C8C330BEB02A4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GnaletTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		38070DDA22C7FE32006935F2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3804A3FD22CCB4E300669133 /* UIOffset+Literals.swift in Sources */,
 				3835A76322CA8DD000521391 /* Subscriptions.swift in Sources */,
 				38B76AFE22C8228200AB68D8 /* IssueSelectVC.swift in Sources */,
+				3804A3FC22CCB4E300669133 /* UIEdgeInsets+Literals.swift in Sources */,
 				38B76B0422C8979600AB68D8 /* LayoutProperty.swift in Sources */,
 				38801AE622CA4C4F001CABA2 /* LocationTextinput.swift in Sources */,
 				38801ADE22C90C61001CABA2 /* TextViewInput.swift in Sources */,
 				38070DE222C7FE32006935F2 /* AppDelegate.swift in Sources */,
 				38070E1522C8C315006935F2 /* ReportFormVC.swift in Sources */,
+				3804A3FB22CCB4E300669133 /* CGSize+Literals.swift in Sources */,
 				38070E0A22C80172006935F2 /* HomeOptionsCell.swift in Sources */,
 				38070E0E22C80215006935F2 /* UIKit+Extensions.swift in Sources */,
 				38801AE222CA486C001CABA2 /* GeneralReportView.swift in Sources */,
 				38801AE822CA5D13001CABA2 /* Report.swift in Sources */,
 				38B76B0522C8979600AB68D8 /* Protocols.swift in Sources */,
+				3804A3FA22CCB4E300669133 /* CGPoint+Literals.swift in Sources */,
 				38801AE022CA4524001CABA2 /* Foundation+Extensions.swift in Sources */,
 				3835A76022CA744B00521391 /* RegionPickerInput.swift in Sources */,
 				38070E1322C8B966006935F2 /* BasicTextInput.swift in Sources */,
@@ -361,6 +527,7 @@
 				38070E0222C800D5006935F2 /* HomeVC.swift in Sources */,
 				38B76AF722C819A000AB68D8 /* CategoryCell.swift in Sources */,
 				38B76AFA22C81E5A00AB68D8 /* Category.swift in Sources */,
+				3804A3FE22CCB4E300669133 /* CGRect+Literals.swift in Sources */,
 				38B76B0622C8979600AB68D8 /* Opereators.swift in Sources */,
 				38801AE422CA493E001CABA2 /* ImagePickerView.swift in Sources */,
 			);
@@ -522,6 +689,7 @@
 		};
 		38070DFC22C7FE35006935F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26B8A3FBD7F3EBDF7A659142 /* Pods-Gnalet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -541,6 +709,7 @@
 		};
 		38070DFD22C7FE35006935F2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD74638CE0C98117E283FA81 /* Pods-Gnalet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -560,6 +729,7 @@
 		};
 		38070DFF22C7FE35006935F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBC4C4D729CE425EE6BFF0BE /* Pods-GnaletTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -581,6 +751,7 @@
 		};
 		38070E0022C7FE35006935F2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB77BAF71CF85467EFFA5E91 /* Pods-GnaletTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

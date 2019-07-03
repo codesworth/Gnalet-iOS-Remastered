@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import MaterialComponents.MaterialButtons
 
 class GeneralReportView: UIView {
     
     // MARK:- Components
     
-    private let marginVertical:CGFloat = 20
+    private let marginVertical:CGFloat = 24
     
     private lazy var scrollView:UIScrollView = {
         let scroll = UIScrollView()
@@ -59,10 +60,12 @@ class GeneralReportView: UIView {
     }()
     
     private lazy var submitbutton:UIButton = {
-        let button =  UIButton(frame: .zero)
+        let button =  MDCButton(frame: .zero)
         button.setTitle("SUBMIT", for: .normal)
         button.backgroundColor = .primary
         button.setTitleColor(.white, for: .normal)
+        button.setElevation(ShadowElevation(4), for: .normal)
+        button.layer.cornerRadius = 20
         return button
     }()
 
@@ -124,7 +127,7 @@ class GeneralReportView: UIView {
         imagePickerView.layout{
             $0.top == contentView.topAnchor + 20
             $0.centerX == contentView.centerXAnchor
-            $0.width |=| 200
+            $0.width |=| 250
             $0.height |=| 200
             
         }
@@ -151,14 +154,14 @@ class GeneralReportView: UIView {
             $0.top == descriptionInput.bottomAnchor + marginVertical
             $0.leading == contentView.leadingAnchor + 16
             $0.trailing == contentView.trailingAnchor - 16
-            $0.height |=| 40
+            $0.height |=| 60
         }
         
         submitbutton.layout{
             $0.top == regionPicker.bottomAnchor + marginVertical
             $0.centerX == contentView.centerXAnchor
             $0.height |=| 40
-            $0.width |=| 120
+            $0.width |=| 160
         }
     }
 }

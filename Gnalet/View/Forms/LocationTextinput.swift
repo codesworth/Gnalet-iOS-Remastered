@@ -12,14 +12,17 @@ class LocationTextinput: UIView {
 
     //MARK: - Components
     private lazy var textField:BasicTextInput = {
-        let field = BasicTextInput(frame: .zero)
+        let field = BasicTextInput(frame:[0])//[0,0,UIScreen.width - 32,60] )
         field.isUserInteractionEnabled = false
         return field
     }()
     
+    
     private lazy var button:UIButton = { [unowned self] by in
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 60))
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 150, height: 60))
         button.backgroundColor = .primary
+        
+        button.roundCorners([.layerMaxXMinYCorner,.layerMaxXMaxYCorner], radius: 4)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
         button.setTitle("ADJUST", for: .normal)
@@ -31,7 +34,8 @@ class LocationTextinput: UIView {
         let stack = UIStackView()
         stack.alignment = .fill
         stack.axis = .horizontal
-        stack.distribution = .fillProportionally
+        stack.distribution = .fill
+        stack.spacing = 0
         return stack
     }()
     
@@ -88,7 +92,7 @@ class LocationTextinput: UIView {
     
     override func didMoveToWindow() {
         super.didMoveToWindow()
-        button.isHidden = true
+        //button.isHidden = true
     }
     
     //MARK:- SELECTOR
