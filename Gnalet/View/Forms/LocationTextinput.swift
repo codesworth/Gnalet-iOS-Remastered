@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class LocationTextinput: UIView {
 
@@ -17,6 +18,7 @@ class LocationTextinput: UIView {
         return field
     }()
     
+    private var locationService:LocationService?
     
     private lazy var button:UIButton = { [unowned self] by in
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 150, height: 60))
@@ -39,6 +41,12 @@ class LocationTextinput: UIView {
         return stack
     }()
     
+    fileprivate var address:GMSAddress?{
+        didSet{
+            guard let add = address else {return}
+            textField.setText(add.lines?.first)
+        }
+    }
     
     var placeholder:String =  .empty{
         didSet{
@@ -92,7 +100,11 @@ class LocationTextinput: UIView {
     
     override func didMoveToWindow() {
         super.didMoveToWindow()
-        //button.isHidden = true
+        
+        button.isHidden = true
+        locationService = LocationService()
+        locationService?.delegate = self
+        
     }
     
     //MARK:- SELECTOR
@@ -101,3 +113,13 @@ class LocationTextinput: UIView {
     }
 
 }
+
+
+extension LocationTextinput:LocationServiceDelegate{
+    
+    func locationupdated(_ address: GMSAddress) {
+        self.address = address
+    }
+}
+
+

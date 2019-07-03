@@ -35,9 +35,14 @@ class TextViewInput:UIView{
         return view
     }()
     
+    
     //MARK: - DECLS
     var topConstraint:NSLayoutConstraint!
     var heightConstraint:NSLayoutConstraint!
+    
+    var descriptionText:String{
+        return textView.text
+    }
     
     var placeholder:String = .empty{
         didSet{

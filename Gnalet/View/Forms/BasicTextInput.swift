@@ -27,6 +27,13 @@ class BasicTextInput: UIView {
         }
     }
     
+    func setText(_ text:String?){
+        if let text = text{
+            textField.text = text
+            textBeganAnimation()
+        }
+    }
+    
     private lazy var textField:UITextField = {
         let txtfield = UITextField(frame: .zero)
         txtfield.borderStyle = .none
@@ -60,6 +67,10 @@ class BasicTextInput: UIView {
         textField.delegate = self
         
         
+    }
+    
+    var text:String{
+        return textField.text ?? .empty
     }
     
     override func layoutSubviews() {

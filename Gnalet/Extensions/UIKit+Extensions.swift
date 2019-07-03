@@ -99,7 +99,11 @@ extension UIApplication{
     static var window:UIWindow?{
         return shared.keyWindow
     }
+    
+    static var GMAPS_API_KEY:String{
+        return "AIzaSyD0mskPw54Rw8kSCHlfNHexW2cTLzVh4Z8"
+    }
 }
 
 
-//AIzaSyD0mskPw54Rw8kSCHlfNHexW2cTLzVh4Z8
+//

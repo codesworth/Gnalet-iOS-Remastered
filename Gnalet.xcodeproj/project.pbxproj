@@ -27,6 +27,8 @@
 		38070E1522C8C315006935F2 /* ReportFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38070E1422C8C315006935F2 /* ReportFormVC.swift */; };
 		3835A76022CA744B00521391 /* RegionPickerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3835A75F22CA744B00521391 /* RegionPickerInput.swift */; };
 		3835A76322CA8DD000521391 /* Subscriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3835A76222CA8DD000521391 /* Subscriptions.swift */; };
+		3842158D22CD165A0045E4A6 /* ReportComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3842158C22CD165A0045E4A6 /* ReportComposer.swift */; };
+		3842159022CD17A10045E4A6 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3842158F22CD17A10045E4A6 /* LocationService.swift */; };
 		38801ADE22C90C61001CABA2 /* TextViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38801ADD22C90C61001CABA2 /* TextViewInput.swift */; };
 		38801AE022CA4524001CABA2 /* Foundation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38801ADF22CA4524001CABA2 /* Foundation+Extensions.swift */; };
 		38801AE222CA486C001CABA2 /* GeneralReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38801AE122CA486C001CABA2 /* GeneralReportView.swift */; };
@@ -79,6 +81,8 @@
 		38070E1422C8C315006935F2 /* ReportFormVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportFormVC.swift; sourceTree = "<group>"; };
 		3835A75F22CA744B00521391 /* RegionPickerInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionPickerInput.swift; sourceTree = "<group>"; };
 		3835A76222CA8DD000521391 /* Subscriptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscriptions.swift; sourceTree = "<group>"; };
+		3842158C22CD165A0045E4A6 /* ReportComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportComposer.swift; sourceTree = "<group>"; };
+		3842158F22CD17A10045E4A6 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		38801ADD22C90C61001CABA2 /* TextViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewInput.swift; sourceTree = "<group>"; };
 		38801ADF22CA4524001CABA2 /* Foundation+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation+Extensions.swift"; sourceTree = "<group>"; };
 		38801AE122CA486C001CABA2 /* GeneralReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralReportView.swift; sourceTree = "<group>"; };
@@ -155,6 +159,8 @@
 		38070DE022C7FE32006935F2 /* Gnalet */ = {
 			isa = PBXGroup;
 			children = (
+				3842158E22CD178C0045E4A6 /* Services */,
+				3842158B22CD16400045E4A6 /* Coordinator */,
 				3835A76122CA8DD000521391 /* Subscriptions */,
 				38B76AFF22C8976500AB68D8 /* Frameworks */,
 				38070E0C22C801F4006935F2 /* Extensions */,
@@ -256,6 +262,22 @@
 				3835A76222CA8DD000521391 /* Subscriptions.swift */,
 			);
 			path = Subscriptions;
+			sourceTree = "<group>";
+		};
+		3842158B22CD16400045E4A6 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				3842158C22CD165A0045E4A6 /* ReportComposer.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		3842158E22CD178C0045E4A6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3842158F22CD17A10045E4A6 /* LocationService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		38B76AFF22C8976500AB68D8 /* Frameworks */ = {
@@ -517,6 +539,8 @@
 				38070E0A22C80172006935F2 /* HomeOptionsCell.swift in Sources */,
 				38070E0E22C80215006935F2 /* UIKit+Extensions.swift in Sources */,
 				38801AE222CA486C001CABA2 /* GeneralReportView.swift in Sources */,
+				3842158D22CD165A0045E4A6 /* ReportComposer.swift in Sources */,
+				3842159022CD17A10045E4A6 /* LocationService.swift in Sources */,
 				38801AE822CA5D13001CABA2 /* Report.swift in Sources */,
 				38B76B0522C8979600AB68D8 /* Protocols.swift in Sources */,
 				3804A3FA22CCB4E300669133 /* CGPoint+Literals.swift in Sources */,
