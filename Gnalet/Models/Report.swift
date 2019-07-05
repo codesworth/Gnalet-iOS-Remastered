@@ -47,21 +47,20 @@ struct Report {
 
 extension Report{
     
-    enum Fields:String {
+    public enum Fields:String {
         case id
         case location
-        case coordinate
+        case latitude
         case category
         case description
-        case imageLink
-        case region
-        case regionCode
-        case subAdminArea
+        case link
+        case subAdminArea = "admin-area"
+        case regionCode = "sup_code"
         case status
-        case reporter
-        case reporterUid
+        case Reporter
+        case uid
         case extras
-        case dateCreated
+        case supBody,week, date, longitude
     }
 }
 
@@ -114,7 +113,7 @@ extension Report{
         return RegionCodes[index]
     }
     
-    static func getSupCode(for region:String)->String{
+    static func getRegionCode(for region:String)->String{
         guard let index = Regions.firstIndex(of: region) else {return "GAR"}
         return RegionCodes[index]
     }

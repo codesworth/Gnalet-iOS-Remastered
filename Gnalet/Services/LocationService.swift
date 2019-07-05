@@ -11,7 +11,7 @@ import MaterialComponents
 import GoogleMaps
 
 protocol LocationServiceDelegate:class {
-    func locationupdated(_ address:GMSAddress)
+    func locationupdated(_ address:GMSAddress, _ at:CLLocationCoordinate2D)
 }
 
 class LocationService:NSObject{
@@ -53,7 +53,7 @@ class LocationService:NSObject{
         
         GMSGeocoder().reverseGeocodeCoordinate(coordinate) { (response, err) in
             guard let address  = response?.firstResult() else {return}
-            self.delegate?.locationupdated(address)
+            self.delegate?.locationupdated(address,coordinate)
         }
     }
     

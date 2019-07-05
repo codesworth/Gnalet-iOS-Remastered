@@ -11,6 +11,7 @@ import GoogleMaps
 
 class LocationTextinput: UIView {
 
+    typealias LocationData = (address:GMSAddress,coordinate:CLLocationCoordinate2D)
     //MARK: - Components
     private lazy var textField:BasicTextInput = {
         let field = BasicTextInput(frame:[0])//[0,0,UIScreen.width - 32,60] )
@@ -44,14 +45,40 @@ class LocationTextinput: UIView {
     fileprivate var address:GMSAddress?{
         didSet{
             guard let add = address else {return}
-            textField.setText(add.lines?.first)
+            if let country = add.country{
+               textField.setText(add.lines?.first?.replacingOccurrences(of: country, with: ""))
+            }else{
+                textField.setText(add.lines?.first)
+            }
+            
         }
     }
+    
+    func formatAddrDisplay(address:GMSAddress){
+        if let country = address.country, let subl = address.subLocality{
+            let line1 = address.lines?.first
+            let final = line1?.replacingOccurrences(of: country, with: "").replacingOccurrences(of: ",", with: "")
+            var fina = final?.components(separatedBy: " ")
+            if fina?.last == subl{
+                fina?.removeLast()
+                
+            }
+        }
+    }
+    
+    fileprivate var coordinate:CLLocationCoordinate2D?
     
     var placeholder:String =  .empty{
         didSet{
             textField.placeholder = "Location"
         }
+    }
+    
+    func getLocationData()->LocationData?{
+        if let ad = address, let co = coordinate{
+            return (ad,co)
+        }
+        return nil
     }
     
     //MARK: - Init
@@ -117,8 +144,9 @@ class LocationTextinput: UIView {
 
 extension LocationTextinput:LocationServiceDelegate{
     
-    func locationupdated(_ address: GMSAddress) {
+    func locationupdated(_ address: GMSAddress, _ at:CLLocationCoordinate2D) {
         self.address = address
+        self.coordinate = at
     }
 }
 

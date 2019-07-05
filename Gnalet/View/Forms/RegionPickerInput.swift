@@ -58,6 +58,7 @@ class RegionPickerInput:MDCCard{
     fileprivate let regionCodes = Report.RegionCodes
     private var pickerIsShowing = false
     
+    var region:String?
     
     //MARK:- Init
     
@@ -147,6 +148,7 @@ extension RegionPickerInput:UIPickerViewDelegate,UIPickerViewDataSource{
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let region = regions[row]
         label.text = region
+        self.region = region
         //
     }
 }
