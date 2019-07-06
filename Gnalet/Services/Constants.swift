@@ -9,3 +9,5 @@
 import Foundation
 
 
+let _TS = "ts"
+let _JPG = ".jpg"

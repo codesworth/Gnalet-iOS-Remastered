@@ -8,7 +8,9 @@
 
 import FirebaseAuth
 import FirebaseFirestore
-let _TS = "ts"
+import FirebaseStorage
+
+
 
 class AppService {
     
@@ -16,6 +18,10 @@ class AppService {
     
     static var store:Firestore{
         return Firestore.firestore()
+    }
+    
+    static var storage:Storage{
+        return Storage.storage()
     }
     
     static var uid:String{
@@ -45,6 +51,33 @@ class AppService {
             if err != nil{
                 x(false,err)
             }
+        }
+    }
+    
+    static func uploadReport(report:[String:Any], image:UIImage?,category:String, completion:@escaping Completion){
+        if image != nil{
+            store.collection(.Reports).document().setData(report, merge: true) { (err) in
+                if let err = err{
+                    completion(false,err)
+                }else{
+                    completion(true,err)
+                }
+            }
+        }else{
+            let id = store.collection(.Reporters).document()
+            guard let data = image?.dataFromJPEG() else {return}
+            storage.reference().child(category).child(id.documentID.appending(_JPG)).putData(data, metadata: nil) { (meta, err) in
+                if err != nil{
+                    id.setData(report, merge: true, completion: { (err) in
+                        if let err = err{
+                            completion(false,err)
+                        }else{
+                            completion(true,err)
+                        }
+                    })
+                }
+            }
+            
         }
     }
 }

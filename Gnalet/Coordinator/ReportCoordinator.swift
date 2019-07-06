@@ -32,7 +32,7 @@ public class ReportCoordinator:NSObject{
         address:GMSAddress,
         coordinate:CLLocationCoordinate2D,
         image:UIImage?,
-        reporter:String?,
+        reporter:String,
         region:String,
         extras:Report.Extras?,
         reporterId:String?,
@@ -40,23 +40,26 @@ public class ReportCoordinator:NSObject{
         
         let report:[String:Any] = [
             Report.Fields.category.rawValue: category,
-            Report.Fields.location.rawValue:address.locality,
+            Report.Fields.location.rawValue:address.locality ?? .empty,
             Report.Fields.regionCode.rawValue:Report.getRegionCode(for: region),
             Report.Fields.latitude.rawValue:coordinate.latitude,
             Report.Fields.longitude.rawValue:coordinate.longitude,
             Report.Fields.supBody.rawValue:region,
-            Report.Fields.extras.rawValue:extras,
+            Report.Fields.extras.rawValue:extras ?? [:],
             Report.Fields.date.rawValue:FieldValue.serverTimestamp(),
-            Report.Fields.Reporter.rawValue:"",
+            Report.Fields.Reporter.rawValue:reporter,
             Report.Fields.description.rawValue:reportDescription,
             Report.Fields.week.rawValue:Calendar.current.component(.weekOfYear, from: Date()),
             Report.Fields.uid.rawValue:AppService.uid,
             Report.Fields.link.rawValue:String.empty,
-            Report.Fields.subAdminArea.rawValue:address.administrativeArea
-            
+            Report.Fields.subAdminArea.rawValue:address.administrativeArea ?? .empty,
+            Report.Fields.status.rawValue:Report.Status.unsolved.rawValue
             
         ]
+        return report
     }
+    
+    
     
     
 }
