@@ -8,6 +8,15 @@
 
 import FirebaseFirestore
 
+enum References:String{
+    case Reporters = "GN-REPORTERS"
+    case Reports = "GN-REPORTS"
+    case Locations = "GN-Locations"
+    case Devices = "GN-DEVICES"
+    case TOKENS = "TOKENS"
+    case Feedback = "USERFEEDBACK"
+}
+
 
 extension DocumentReference{
     func collection(_ ref:References)->CollectionReference{
@@ -49,8 +58,8 @@ extension DocumentSnapshot{
         return []
     }
     
-    func getDictionary(_ id:String)->Aliases.dictionary{
-        if let field = get(id) as? Aliases.dictionary{
+    func getDictionary(_ id:String)->[String:Any]{
+        if let field = get(id) as? [String:Any]{
             return field
         }
         return [:]
@@ -100,13 +109,7 @@ extension DocumentSnapshot{
 
 extension Firestore{
     
-    class var database:Firestore{
-        let db = Firestore.firestore()
-        let settings = db.settings
-        settings.areTimestampsInSnapshotsEnabled = true
-        db.settings = settings
-        return db
-    }
+
     
     func collection(_ ref:References)->CollectionReference{
         return collection(ref.rawValue)

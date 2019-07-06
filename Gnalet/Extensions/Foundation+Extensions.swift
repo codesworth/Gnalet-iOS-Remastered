@@ -34,6 +34,13 @@ extension String{
     
 }
 
+extension TimeInterval{
+    
+    static var currentMillis:Int{
+        return Int(Date().timeIntervalSince1970 * 1000)
+    }
+}
+
 
 
 extension AnyHashable{

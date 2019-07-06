@@ -46,6 +46,7 @@
 		38BD4FD622CF83D4002C974F /* AppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD4FD522CF83D4002C974F /* AppService.swift */; };
 		38BD4FD822CFD22E002C974F /* Reporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD4FD722CFD22E002C974F /* Reporter.swift */; };
 		38BD4FDA22CFD55A002C974F /* Firestore+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD4FD922CFD55A002C974F /* Firestore+Ex.swift */; };
+		38BD4FDC22D11F2D002C974F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD4FDB22D11F2D002C974F /* Constants.swift */; };
 		961AF6DE56B5BF6977D818E6 /* Pods_GnaletTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB4A771AF1F8F6AE1322684 /* Pods_GnaletTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +104,7 @@
 		38BD4FD522CF83D4002C974F /* AppService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppService.swift; sourceTree = "<group>"; };
 		38BD4FD722CFD22E002C974F /* Reporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reporter.swift; sourceTree = "<group>"; };
 		38BD4FD922CFD55A002C974F /* Firestore+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firestore+Ex.swift"; sourceTree = "<group>"; };
+		38BD4FDB22D11F2D002C974F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3EB4A771AF1F8F6AE1322684 /* Pods_GnaletTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GnaletTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56616C3DB5D6E96556EA1603 /* Pods_Gnalet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gnalet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD74638CE0C98117E283FA81 /* Pods-Gnalet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gnalet.release.xcconfig"; path = "Target Support Files/Pods-Gnalet/Pods-Gnalet.release.xcconfig"; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 			children = (
 				3842158F22CD17A10045E4A6 /* LocationService.swift */,
 				38BD4FD522CF83D4002C974F /* AppService.swift */,
+				38BD4FDB22D11F2D002C974F /* Constants.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				38B76B0422C8979600AB68D8 /* LayoutProperty.swift in Sources */,
 				38801AE622CA4C4F001CABA2 /* LocationTextinput.swift in Sources */,
 				38801ADE22C90C61001CABA2 /* TextViewInput.swift in Sources */,
+				38BD4FDC22D11F2D002C974F /* Constants.swift in Sources */,
 				38070DE222C7FE32006935F2 /* AppDelegate.swift in Sources */,
 				38070E1522C8C315006935F2 /* ReportFormVC.swift in Sources */,
 				3804A3FB22CCB4E300669133 /* CGSize+Literals.swift in Sources */,
