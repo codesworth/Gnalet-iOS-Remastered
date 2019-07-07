@@ -136,7 +136,7 @@ class LocationTextinput: UIView {
     
     //MARK:- SELECTOR
     @objc func adjustButtonPressed(_ sender:UIButton){
-        
+        Subscription.main.post(suscription: .launchMaps, object: coordinate)
     }
 
 }

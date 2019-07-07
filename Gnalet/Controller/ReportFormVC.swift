@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ReportFormVC: UIViewController {
 
@@ -16,16 +17,24 @@ class ReportFormVC: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
+    private var coordinate:CLLocationCoordinate2D?
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
     private var type:Report.Types = .general
+    private var coordinator = ReportCoordinator()
     
     private lazy var generalForm:GeneralReportView = {
         let form = GeneralReportView(frame: .zero)
         return form
     }()
+    
+    private lazy var mapView:Mapview = { [unowned self] by in
+        let map = Mapview(frame: view.frame, coordinate: coordinate!)
+        return map
+    }(())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +50,16 @@ class ReportFormVC: UIViewController {
     }
     
     
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         Subscription.main.post(suscription: .removePickerIfPresent, object: nil)
+    }
+    
+    @objc func launchMaps(_ notification:Notification){
+        guard let coordinate = notification.userInfo?[.info] as? CLLocationCoordinate2D else {return}
+        self.coordinate = coordinate
+        view.addSubview(mapView)
     }
 
     /*
