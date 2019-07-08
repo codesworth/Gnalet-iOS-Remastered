@@ -40,6 +40,7 @@ class ReportFormVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         view.addSubview(generalForm)
+        subscribeTo(subscription: .launchMaps, selector: #selector(launchMaps(_:)))
         generalForm.layout{
             $0.top == view.topAnchor
             $0.bottom == view.bottomAnchor

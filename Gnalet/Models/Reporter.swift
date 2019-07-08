@@ -32,6 +32,9 @@ struct Reporter{
     init(uid:String){
        self.uid = uid
         username = ANONYMOUS
+        lastnme = ""
+        email = ""
+        phone = ""
     }
     
     

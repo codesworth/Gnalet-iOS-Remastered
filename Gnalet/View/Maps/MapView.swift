@@ -25,10 +25,20 @@ class Mapview:UIView{
         return map
     }(())
     
+    lazy var marker:GMSMarker = { [unowned self] by in
+        let marker = GMSMarker(position: coordinate)
+        marker.icon = #imageLiteral(resourceName: "pin")
+        return marker
+    }(())
+    
+    let markerImage:UIImageView = {
+        let imgv =
+    }()
     
     init(frame: CGRect, coordinate:CLLocationCoordinate2D) {
         super.init(frame: frame)
         self.coordinate = coordinate
+        initialize()
     }
     
     func initialize(){
@@ -54,5 +64,21 @@ class Mapview:UIView{
     override func didMoveToWindow() {
         super.didMoveToWindow()
         containerView.addSubview(googleMap)
+        googleMap.delegate = self
+        googleMap.layout{
+            $0.top == containerView.topAnchor
+            $0.bottom == containerView.bottomAnchor
+            $0.leading == containerView.leadingAnchor
+            $0.trailing == containerView.trailingAnchor
+        }
+    }
+}
+
+
+
+extension Mapview: GMSMapViewDelegate{
+    
+    func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
+        <#code#>
     }
 }

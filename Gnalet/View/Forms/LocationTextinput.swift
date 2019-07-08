@@ -50,7 +50,7 @@ class LocationTextinput: UIView {
             }else{
                 textField.setText(add.lines?.first)
             }
-            
+            button.isHidden = false
         }
     }
     
