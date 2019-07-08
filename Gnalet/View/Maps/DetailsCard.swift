@@ -7,6 +7,7 @@
 //
 
 import MaterialComponents.MDCCard
+import GoogleMaps.GMSAddress
 
 class DetailCard:MDCCard{
     
@@ -16,6 +17,15 @@ class DetailCard:MDCCard{
         label.font = .systemFont(ofSize: 18, weight: .medium)
         label.textColor = .darkGray
         return label
+    }()
+    
+    private lazy var headerLine:MDCCard = {
+        let line = MDCCard(frame: .zero)
+        line.isInteractable = false
+        line.backgroundColor = .gray
+        line.setShadowElevation(ShadowElevation(rawValue: 2), for: .normal)
+        line.cornerRadius = 0
+        return line
     }()
     
     private lazy var adrressLine:UILabel = {
@@ -44,7 +54,7 @@ class DetailCard:MDCCard{
         butt.titleLabel?.font = .systemFont(ofSize: 18, weight: .medium)
         butt.addTarget(self, action: #selector(locationConfirmed(_:)), for: .touchUpInside)
         return butt
-    }()
+    }(())
     
     private lazy var longLable:UILabel = {
         let label = UILabel(frame: .zero)
@@ -54,6 +64,16 @@ class DetailCard:MDCCard{
         return label
         
     }()
+    
+    
+    var address:GMSAddress?{
+        didSet{
+            guard let coordinate = address?.coordinate, let line = address?.lines?.first, let country = address?.country else {return}
+            adrressLine.text = line.replacingOccurrences(of: country, with: "")
+            latLabel.text = "Latitude: \(coordinate.latitude)"
+            longLable.text = "Longitude: \(coordinate.longitude)"
+        }
+    }
     
     
     override init(frame: CGRect) {
@@ -69,7 +89,55 @@ class DetailCard:MDCCard{
         setShadowElevation(ShadowElevation(5), for: .normal)
         cornerRadius = 10
         isInteractable = false
+        addSubview(header)
+        addSubview(headerLine)
+        addSubview(adrressLine)
+        addSubview(latLabel)
+        addSubview(longLable)
+        addSubview(confirmButt)
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        header.layout{
+            $0.top == topAnchor + 8
+            $0.leading == leadingAnchor + 8
+        }
+        headerLine.layout{
+            $0.top == header.bottomAnchor + 6
+            $0.leading == leadingAnchor
+            $0.trailing == trailingAnchor
+            $0.height |=| 1
+        }
+    
+        adrressLine.layout{
+            $0.top == headerLine.bottomAnchor + 8
+            $0.leading == leadingAnchor + 8
+            $0.trailing == trailingAnchor - 8
+            
+        }
+        
+        latLabel.layout{
+            $0.top == adrressLine.bottomAnchor + 8
+            $0.leading == leadingAnchor + 8
+            $0.trailing == trailingAnchor - 8
+        }
+        
+        longLable.layout{
+            $0.top == latLabel.bottomAnchor + 8
+            $0.leading == leadingAnchor + 8
+            $0.trailing == trailingAnchor - 8
+        }
+        
+        confirmButt.layout{
+            $0.bottom == bottomAnchor
+            $0.leading == leadingAnchor
+            $0.trailing == trailingAnchor
+            $0.height |=| 50
+        }
+    }
+    
+    
     
     
     //MARK: - SELECTORS
