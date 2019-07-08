@@ -7,6 +7,7 @@
 //
 
 import GoogleMaps
+import MaterialComponents.MDCCard
 
 class Mapview:UIView{
     
@@ -32,7 +33,8 @@ class Mapview:UIView{
     }(())
     
     let markerImage:UIImageView = {
-        let imgv =
+        let imgv = UIImageView(frame: [0,0,50,50])
+        return imgv
     }()
     
     init(frame: CGRect, coordinate:CLLocationCoordinate2D) {
@@ -40,6 +42,8 @@ class Mapview:UIView{
         self.coordinate = coordinate
         initialize()
     }
+    
+    
     
     func initialize(){
         backgroundColor = .white
@@ -71,6 +75,10 @@ class Mapview:UIView{
             $0.leading == containerView.leadingAnchor
             $0.trailing == containerView.trailingAnchor
         }
+        
+        containerView.addSubview(markerImage)
+        markerImage.center = [bounds.midX,bounds.midY]
+        
     }
 }
 
@@ -79,6 +87,10 @@ class Mapview:UIView{
 extension Mapview: GMSMapViewDelegate{
     
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
-        <#code#>
+        markerImage.center.y += 20
+    }
+    
+    func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
+        let postion = position.target
     }
 }
