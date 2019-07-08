@@ -9,6 +9,8 @@
 import MaterialComponents.MDCCard
 import GoogleMaps.GMSAddress
 
+
+
 class DetailCard:MDCCard{
     
     private lazy var header:UILabel = {
@@ -23,7 +25,7 @@ class DetailCard:MDCCard{
         let line = MDCCard(frame: .zero)
         line.isInteractable = false
         line.backgroundColor = .gray
-        line.setShadowElevation(ShadowElevation(rawValue: 2), for: .normal)
+        line.setShadowElevation(ShadowElevation(rawValue: 5), for: .normal)
         line.cornerRadius = 0
         return line
     }()
@@ -65,11 +67,13 @@ class DetailCard:MDCCard{
         
     }()
     
+    var isShowing = false
+    
     
     var address:GMSAddress?{
         didSet{
             guard let coordinate = address?.coordinate, let line = address?.lines?.first, let country = address?.country else {return}
-            adrressLine.text = line.replacingOccurrences(of: country, with: "")
+            adrressLine.text = "Location: \(line.replacingOccurrences(of: country, with: ""))"
             latLabel.text = "Latitude: \(coordinate.latitude)"
             longLable.text = "Longitude: \(coordinate.longitude)"
         }
@@ -95,6 +99,7 @@ class DetailCard:MDCCard{
         addSubview(latLabel)
         addSubview(longLable)
         addSubview(confirmButt)
+        clipsToBounds = true
     }
     
     override func layoutSubviews() {
@@ -143,6 +148,6 @@ class DetailCard:MDCCard{
     //MARK: - SELECTORS
     
     @objc func locationConfirmed(_ sender:UIButton){
-        
+        Subscription.main.post(suscription: .mapAdjustedCoordinates, object: address)
     }
 }

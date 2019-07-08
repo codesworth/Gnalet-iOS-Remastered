@@ -22,7 +22,7 @@ class LocationTextinput: UIView {
     private var locationService:LocationService?
     
     private lazy var button:UIButton = { [unowned self] by in
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 150, height: 60))
+        let button = UIButton(frame: .zero)//(frame: CGRect(x: 0, y: 0, width: 150, height: 60))
         button.backgroundColor = .primary
         
         button.roundCorners([.layerMaxXMinYCorner,.layerMaxXMaxYCorner], radius: 4)
@@ -42,7 +42,7 @@ class LocationTextinput: UIView {
         return stack
     }()
     
-    fileprivate var address:GMSAddress?{
+    var address:GMSAddress?{
         didSet{
             guard let add = address else {return}
             if let country = add.country{
@@ -93,36 +93,36 @@ class LocationTextinput: UIView {
     
     private func initialize(){
         backgroundColor = .white
-        addSubview(stack)
-        stack.addArrangedSubview(textField)
-        stack.addArrangedSubview(button)
-//        addSubview(textField)
-//        addSubview(button)
+//        addSubview(stack)
+//        stack.addArrangedSubview(textField)
+//        stack.addArrangedSubview(button)
+        addSubview(textField)
+        addSubview(button)
     }
     
     //MARK:- LAYOUT
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        stack.layout{
-            $0.leading == leadingAnchor
-            $0.top == topAnchor
+//        stack.layout{
+//            $0.leading == leadingAnchor
+//            $0.top == topAnchor
+//            $0.trailing == trailingAnchor
+//            $0.bottom == bottomAnchor
+//        }
+        
+        button.layout{
             $0.trailing == trailingAnchor
+            $0.top == topAnchor
+            $0.bottom == bottomAnchor
+            $0.width |=| 100
+        }
+        textField.layout{
+            $0.leading == leadingAnchor
+            $0.trailing == button.leadingAnchor
+            $0.top == topAnchor
             $0.bottom == bottomAnchor
         }
-        
-//        button.layout{
-//            $0.trailing == trailingAnchor
-//            $0.top == topAnchor
-//            $0.bottom == bottomAnchor
-//            $0.width |=| 100
-//        }
-//        textField.layout{
-//            $0.leading == leadingAnchor
-//            $0.trailing == button.leadingAnchor
-//            $0.top == topAnchor
-//            $0.bottom == bottomAnchor
-//        }
     }
     
     override func didMoveToWindow() {

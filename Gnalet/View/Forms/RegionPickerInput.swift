@@ -73,7 +73,7 @@ class RegionPickerInput:MDCCard{
     
     private func initialize(){
         setShadowElevation(ShadowElevation(4), for: .normal)
-        cornerRadius = 5
+        cornerRadius = 8
         addSubview(label)
         
         doneToolbar.barStyle = .default

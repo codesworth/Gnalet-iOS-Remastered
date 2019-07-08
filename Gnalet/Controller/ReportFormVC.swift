@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import GoogleMaps.GMSAddress
 
 class ReportFormVC: UIViewController {
 
@@ -41,6 +42,7 @@ class ReportFormVC: UIViewController {
         view.backgroundColor = .white
         view.addSubview(generalForm)
         subscribeTo(subscription: .launchMaps, selector: #selector(launchMaps(_:)))
+        subscribeTo(subscription: .mapAdjustedCoordinates, selector: #selector(mapAdjustedCoordinates(_:)))
         generalForm.layout{
             $0.top == view.topAnchor
             $0.bottom == view.bottomAnchor
@@ -57,10 +59,23 @@ class ReportFormVC: UIViewController {
         Subscription.main.post(suscription: .removePickerIfPresent, object: nil)
     }
     
+    
+    
     @objc func launchMaps(_ notification:Notification){
         guard let coordinate = notification.userInfo?[.info] as? CLLocationCoordinate2D else {return}
         self.coordinate = coordinate
         view.addSubview(mapView)
+    }
+    
+    @objc func mapAdjustedCoordinates(_ notification:Notification){
+        guard let address = notification.userInfo?[.info] as? GMSAddress else {return}
+        UIView.animate(withDuration: 0.6, delay: 0, options: .curveEaseInOut, animations: {
+            self.mapView.alpha = 0
+        }) { _ in
+            self.mapView.removeFromSuperview()
+            self.mapView.alpha = 1
+        }
+        generalForm.locationInput.address = address
     }
 
     /*

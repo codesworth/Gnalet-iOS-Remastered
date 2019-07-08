@@ -13,7 +13,7 @@ class Subscription{
     
     enum Name:String {
         
-        case removePickerIfPresent, launchMaps
+        case removePickerIfPresent, launchMaps, mapAdjustedCoordinates
     }
 
     private static let _main = Subscription()

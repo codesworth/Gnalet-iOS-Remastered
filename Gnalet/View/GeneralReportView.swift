@@ -43,7 +43,7 @@ class GeneralReportView: UIView {
         return label
     }()
     
-    private lazy var locationInput:LocationTextinput = {
+    lazy var locationInput:LocationTextinput = {
         let loca = LocationTextinput(frame: .zero)
         loca.placeholder = "Location"
         return loca

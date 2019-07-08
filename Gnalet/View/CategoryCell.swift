@@ -17,6 +17,7 @@ class CategoryCell: UITableViewCell {
     private var info:String = ""
     override func awakeFromNib() {
         super.awakeFromNib()
+        issuelable.textColor = .darkGray
        overlay.setShadowElevation(ShadowElevation(rawValue: 4), for: .normal)
         issueinfoImageView.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(infoTapped(_:)))

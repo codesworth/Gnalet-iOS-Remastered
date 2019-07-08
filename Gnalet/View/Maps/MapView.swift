@@ -8,6 +8,7 @@
 
 import GoogleMaps
 import MaterialComponents.MDCCard
+import MaterialComponents.MDCButton
 
 class Mapview:UIView{
     
@@ -28,12 +29,26 @@ class Mapview:UIView{
     
     lazy var marker:GMSMarker = { [unowned self] by in
         let marker = GMSMarker(position: coordinate)
-        marker.icon = #imageLiteral(resourceName: "pin")
+        let imgv = UIImageView(frame: [0,0,50,50])
+        imgv.image = #imageLiteral(resourceName: "pin")
+        marker.iconView = imgv
         return marker
     }(())
     
+    private lazy var confirmLoc:MDCButton = {
+        let card = MDCButton(frame: [bounds.midX - 70,bounds.maxY - 80,140,40])
+        card.setTitle("Confirm", for: .normal)
+        card.setTitleFont(.systemFont(ofSize: 16, weight: .medium), for: .normal)
+        card.backgroundColor = .primary
+        card.setElevation(ShadowElevation(4), for: .normal)
+        card.layer.cornerRadius = 20
+        card.addTarget(self, action: #selector(confirmLocation(_:)), for: .touchUpInside)
+        return card
+    }()
+    
     let markerImage:UIImageView = {
         let imgv = UIImageView(frame: [0,0,50,50])
+        imgv.image = #imageLiteral(resourceName: "pin")
         return imgv
     }()
     
@@ -45,7 +60,7 @@ class Mapview:UIView{
     
     private lazy var detailCard:DetailCard = {
         let height = UIScreen.height + 50
-        let card  = DetailCard(frame: [25,height,UIScreen.width - 25,140])
+        let card  = DetailCard(frame: [25,height,UIScreen.width - 25,185])
         return card
     }()
     
@@ -69,6 +84,20 @@ class Mapview:UIView{
         }
     }
     
+    @objc func confirmLocation(_ sender: MDCButton){
+        confirmLoc.isHidden = true
+        GMSGeocoder().reverseGeocodeCoordinate(coordinate) { (response, err) in
+            guard let result = response?.firstResult() else {return}
+            self.detailCard.address = result
+            self.addSubview(self.detailCard)
+            self.detailCard.center.x = self.center.x
+            UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.4, options: .curveEaseInOut, animations: {
+                self.detailCard.frame.origin.y -= 240
+            }, completion: nil)
+            self.detailCard.isShowing = true
+        }
+    }
+    
     override func didMoveToWindow() {
         super.didMoveToWindow()
         containerView.addSubview(googleMap)
@@ -79,9 +108,12 @@ class Mapview:UIView{
             $0.leading == containerView.leadingAnchor
             $0.trailing == containerView.trailingAnchor
         }
-        
+        marker.map = googleMap
         containerView.addSubview(markerImage)
-        markerImage.center = [bounds.midX,bounds.midY]
+        containerView.addSubview(confirmLoc)
+        confirmLoc.isHidden = true
+        markerImage.isHidden = true
+        markerImage.center = [bounds.midX,bounds.midY - 10]
         
     }
 }
@@ -91,10 +123,24 @@ class Mapview:UIView{
 extension Mapview: GMSMapViewDelegate{
     
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
-        markerImage.center.y += 20
+        //markerImage.center = marker.groundAnchor
+        mapView.clear()
+        markerImage.isHidden = false
+        confirmLoc.isHidden = false
+        if detailCard.isShowing{
+            UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.4, options: .curveEaseInOut, animations: {
+                self.detailCard.frame.origin.y += 240
+            }, completion: nil)
+            self.detailCard.isShowing = false
+        }
+        
     }
     
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
-        let postion = position.target
+        let position = position.target
+        marker.position = position
+        marker.map = googleMap
+        markerImage.isHidden = true
+        coordinate = position
     }
 }

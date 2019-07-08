@@ -37,6 +37,7 @@ class BasicTextInput: UIView {
     private lazy var textField:UITextField = {
         let txtfield = UITextField(frame: .zero)
         txtfield.borderStyle = .none
+        txtfield.textColor = .darkGray
         txtfield.font = .systemFont(ofSize: 16, weight: .regular)
         return txtfield
     }()
