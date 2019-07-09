@@ -77,6 +77,10 @@ class TextViewInput:UIView{
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        topConstraint = label.topAnchor.constraint(equalTo: topAnchor, constant: 0)
+        let leadConstraint = label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: paddingH)
+        NSLayoutConstraint.activate([topConstraint,leadConstraint])
         line.layout{
             $0.bottom == bottomAnchor
             $0.leading == leadingAnchor + paddingH
@@ -88,12 +92,10 @@ class TextViewInput:UIView{
             $0.leading == leadingAnchor + paddingH
             $0.trailing == trailingAnchor - paddingH
             $0.bottom == line.topAnchor
+            $0.top == label.bottomAnchor
            
         }
-        label.translatesAutoresizingMaskIntoConstraints = false
-        topConstraint = label.topAnchor.constraint(equalTo: topAnchor, constant: 0)
-        let leadConstraint = label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: paddingH)
-        NSLayoutConstraint.activate([topConstraint,leadConstraint])
+        
     }
     
 }

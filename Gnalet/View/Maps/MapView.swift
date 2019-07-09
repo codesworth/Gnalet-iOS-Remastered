@@ -29,7 +29,7 @@ class Mapview:UIView{
     
     lazy var marker:GMSMarker = { [unowned self] by in
         let marker = GMSMarker(position: coordinate)
-        let imgv = UIImageView(frame: [0,0,50,50])
+        let imgv = UIImageView(frame: [0,0,60,60])
         imgv.image = #imageLiteral(resourceName: "pin")
         marker.iconView = imgv
         return marker
@@ -47,7 +47,7 @@ class Mapview:UIView{
     }()
     
     let markerImage:UIImageView = {
-        let imgv = UIImageView(frame: [0,0,50,50])
+        let imgv = UIImageView(frame: [0,0,60,60])
         imgv.image = #imageLiteral(resourceName: "pin")
         return imgv
     }()
@@ -91,7 +91,7 @@ class Mapview:UIView{
             self.detailCard.address = result
             self.addSubview(self.detailCard)
             self.detailCard.center.x = self.center.x
-            UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.4, options: .curveEaseInOut, animations: {
+            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.4, options: .curveEaseInOut, animations: {
                 self.detailCard.frame.origin.y -= 240
             }, completion: nil)
             self.detailCard.isShowing = true
@@ -113,7 +113,7 @@ class Mapview:UIView{
         containerView.addSubview(confirmLoc)
         confirmLoc.isHidden = true
         markerImage.isHidden = true
-        markerImage.center = [bounds.midX,bounds.midY - 10]
+        markerImage.center = [bounds.midX,bounds.midY]
         
     }
 }
@@ -128,7 +128,7 @@ extension Mapview: GMSMapViewDelegate{
         markerImage.isHidden = false
         confirmLoc.isHidden = false
         if detailCard.isShowing{
-            UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.4, options: .curveEaseInOut, animations: {
+            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.4, options: .curveEaseInOut, animations: {
                 self.detailCard.frame.origin.y += 240
             }, completion: nil)
             self.detailCard.isShowing = false

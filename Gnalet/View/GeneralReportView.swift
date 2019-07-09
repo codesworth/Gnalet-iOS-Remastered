@@ -15,6 +15,8 @@ class GeneralReportView: UIView {
     
     private let marginVertical:CGFloat = 24
     
+    private var category:String?
+    
     private lazy var scrollView:UIScrollView = {
         let scroll = UIScrollView()
         scroll.bounces = true
@@ -68,6 +70,13 @@ class GeneralReportView: UIView {
         button.layer.cornerRadius = 20
         return button
     }()
+    
+    private lazy var reporterField:BasicTextInput = {
+        let text = BasicTextInput(frame: .zero)
+        text.placeholder = "Reporter"
+        text.textPlaceHolder = "Reporter"
+        return text
+    }()
 
     var locheight:CGFloat = 38
     private var descHeight:NSLayoutConstraint!
@@ -91,6 +100,7 @@ class GeneralReportView: UIView {
         contentView.addSubview(locationInput)
         contentView.addSubview(descriptionInput)
         contentView.addSubview(regionPicker)
+        contentView.addSubview(reporterField)
         contentView.addSubview(submitbutton)
         NotificationCenter.default.addObserver(self, selector: #selector(increaseHeight(_:)), name: UITextView.textDidChangeNotification, object: nil)
     }
@@ -157,11 +167,29 @@ class GeneralReportView: UIView {
             $0.height |=| 60
         }
         
-        submitbutton.layout{
+        reporterField.layout{
             $0.top == regionPicker.bottomAnchor + marginVertical
+            $0.leading == contentView.leadingAnchor + 16
+            $0.trailing == contentView.trailingAnchor - 16
+            $0.height |=| 60
+        }
+        
+        submitbutton.layout{
+            $0.top == reporterField.bottomAnchor + marginVertical
             $0.centerX == contentView.centerXAnchor
             $0.height |=| 40
             $0.width |=| 160
         }
+    }
+    
+    
+    //MARK:- SELECTORS
+    
+    @objc func submitReport(){
+        let coordinator = ReportCoordinator()
+        if let region = regionPicker.region, let locdat = locationInput.getLocationData(),let cat = category{
+            let report = coordinator.compose(category: cat, address: locdat.address, coordinate: locdat.coordinate, image: imagePickerView.image, reporter: reporterField.text, region: region, extras: nil, reporterId: AppService.uid, reportDescription: descriptionInput.descriptionText)
+        }
+        
     }
 }
