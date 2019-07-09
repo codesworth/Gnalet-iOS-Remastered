@@ -11,6 +11,7 @@ target 'Gnalet' do
   pod 'MaterialComponents/Dialogs'
   pod 'MaterialComponents/Cards'
   pod 'MaterialComponents/ActivityIndicator'
+  pod 'MaterialComponents/ProgressView'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'Firebase/Messaging'

@@ -43,6 +43,8 @@
 #import "MDCOverlayWindow.h"
 #import "MaterialPalettes.h"
 #import "MDCPalettes.h"
+#import "MaterialProgressView.h"
+#import "MDCProgressView.h"
 #import "MaterialShadowElevations.h"
 #import "MDCShadowElevations.h"
 #import "MaterialShadowLayer.h"

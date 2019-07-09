@@ -18,12 +18,23 @@ class BasicTextInput: UIView {
         return label
     }()
     
+    var shouldShowLine = true{
+        didSet{
+            line.isHidden = !shouldShowLine
+        }
+    }
+    
     var topConstraint:NSLayoutConstraint!
     
     var placeholder:String = ""{
         didSet{
             label.text = placeholder
-            textField.placeholder = placeholder
+        }
+    }
+    
+    var textPlaceHolder:String = .empty{
+        didSet{
+            textField.placeholder = textPlaceHolder
         }
     }
     
@@ -121,6 +132,7 @@ extension BasicTextInput:UITextFieldDelegate{
             textBeganAnimation()
         }
         if string.isEmpty && text.count == 1{
+            
            textEndedAnimation()
         }
         return true
