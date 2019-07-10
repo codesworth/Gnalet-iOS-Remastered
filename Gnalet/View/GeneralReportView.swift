@@ -8,6 +8,7 @@
 
 import UIKit
 import MaterialComponents.MaterialButtons
+import MaterialComponents.MaterialDialogs
 
 class GeneralReportView: UIView {
     
@@ -23,6 +24,8 @@ class GeneralReportView: UIView {
         scroll.showsHorizontalScrollIndicator = false
         return scroll
     }()
+    
+    weak var navigator:UINavigationController?
     
     private lazy var contentView:UIView = {
         let view = UIView(frame: .zero)
@@ -189,6 +192,16 @@ class GeneralReportView: UIView {
         let coordinator = ReportCoordinator()
         if let region = regionPicker.region, let locdat = locationInput.getLocationData(),let cat = category{
             let report = coordinator.compose(category: cat, address: locdat.address, coordinate: locdat.coordinate, image: imagePickerView.image, reporter: reporterField.text, region: region, extras: nil, reporterId: AppService.uid, reportDescription: descriptionInput.descriptionText)
+            let dialog = MDCAlertController(title: "Confirm Report", message: "Please confirm details and location of report are accurate")
+            let action = MDCAlertAction(title: "ADJUST", emphasis: .medium, handler: nil)
+            let action2 = MDCAlertAction(title: "CONFIRM", emphasis: .high) { _ in
+                AppService.uploadReport(report: report, image: self.imagePickerView.image, category: cat) { (sucess, err) in
+                    if sucess{
+                        let snack = MDCSnackbarMessage(text: "Report was succesfully submitted")
+                        self.navigator?.popToRootViewController(animated: true)
+                    }
+                }
+            }
         }
         
     }

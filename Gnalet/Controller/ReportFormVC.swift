@@ -25,7 +25,6 @@ class ReportFormVC: UIViewController {
     }
     
     private var type:Report.Types = .general
-    private var coordinator = ReportCoordinator()
     
     private lazy var generalForm:GeneralReportView = {
         let form = GeneralReportView(frame: .zero)
@@ -41,6 +40,7 @@ class ReportFormVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         view.addSubview(generalForm)
+        generalForm.navigator = navigationControllerg
         subscribeTo(subscription: .launchMaps, selector: #selector(launchMaps(_:)))
         subscribeTo(subscription: .mapAdjustedCoordinates, selector: #selector(mapAdjustedCoordinates(_:)))
         generalForm.layout{
