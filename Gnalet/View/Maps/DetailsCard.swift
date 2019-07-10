@@ -150,4 +150,6 @@ class DetailCard:MDCCard{
     @objc func locationConfirmed(_ sender:UIButton){
         Subscription.main.post(suscription: .mapAdjustedCoordinates, object: address)
     }
+    
+    
 }

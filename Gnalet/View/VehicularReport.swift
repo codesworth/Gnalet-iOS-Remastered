@@ -1,16 +1,17 @@
 //
-//  GeneralReportView.swift
+//  VehicularReport.swift
 //  Gnalet
 //
-//  Created by Shadrach Mensah on 01/07/2019.
+//  Created by Shadrach Mensah on 10/07/2019.
 //  Copyright © 2019 Shadrach Mensah. All rights reserved.
 //
+
 
 import UIKit
 import MaterialComponents.MaterialButtons
 import MaterialComponents.MaterialDialogs
 
-class GeneralReportView: UIView {
+class VehicularReportView: UIView {
     
     // MARK:- Components
     
@@ -54,6 +55,27 @@ class GeneralReportView: UIView {
         return loca
     }()
     
+    private lazy var vehicleNumber:BasicTextInput = {
+        let text = BasicTextInput(frame: .zero)
+        text.placeholder = "Vehicle Number"
+        text.textPlaceHolder = "Vehicle Number"
+        return text
+    }()
+    
+    private lazy var vehicleBrand:BasicTextInput = {
+        let text = BasicTextInput(frame: .zero)
+        text.placeholder = "Vehicle Brand"
+        text.textPlaceHolder = "Vehicle Brand"
+        return text
+    }()
+    
+    private lazy var vehicleColor:BasicTextInput = {
+        let text = BasicTextInput(frame: .zero)
+        text.placeholder = "Vehicle Color"
+        text.textPlaceHolder = "Vehicle Color"
+        return text
+    }()
+    
     private lazy var descriptionInput:TextViewInput = {
         let input  = TextViewInput(frame: .zero)
         return input
@@ -80,10 +102,10 @@ class GeneralReportView: UIView {
         text.textPlaceHolder = "Reporter"
         return text
     }()
-
+    
     var locheight:CGFloat = 38
     private var descHeight:NSLayoutConstraint!
-
+    
     // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame:frame)
@@ -101,6 +123,9 @@ class GeneralReportView: UIView {
         contentView.addSubview(imagePickerView)
         contentView.addSubview(emmergencylable)
         contentView.addSubview(locationInput)
+        contentView.addSubview(vehicleNumber)
+        contentView.addSubview(vehicleBrand)
+        contentView.addSubview(vehicleColor)
         contentView.addSubview(descriptionInput)
         contentView.addSubview(regionPicker)
         contentView.addSubview(reporterField)
@@ -136,7 +161,7 @@ class GeneralReportView: UIView {
             $0.trailing == scrollView.trailingAnchor
             $0.leading == scrollView.leadingAnchor
             $0.width |=| bounds.width
-            $0.height |=| 800
+            $0.height |=| 960
         }
         
         imagePickerView.layout{
@@ -158,7 +183,28 @@ class GeneralReportView: UIView {
             $0.height |=| 60
         }
         
-        let top = descriptionInput.topAnchor.constraint(equalTo: locationInput.bottomAnchor, constant: marginVertical)
+        vehicleNumber.layout{
+            $0.top == locationInput.bottomAnchor + marginVertical
+            $0.leading == contentView.leadingAnchor + 8
+            $0.trailing == contentView.trailingAnchor - 8
+            $0.height |=| 60
+        }
+        
+        vehicleBrand.layout{
+            $0.top == vehicleNumber.bottomAnchor + marginVertical
+            $0.leading == contentView.leadingAnchor + 8
+            $0.trailing == contentView.trailingAnchor - 8
+            $0.height |=| 60
+        }
+        
+        vehicleColor.layout{
+            $0.top == vehicleBrand.bottomAnchor + marginVertical
+            $0.leading == contentView.leadingAnchor + 8
+            $0.trailing == contentView.trailingAnchor - 8
+            $0.height |=| 60
+        }
+        
+        let top = descriptionInput.topAnchor.constraint(equalTo: vehicleColor.bottomAnchor, constant: marginVertical)
         let leading = descriptionInput.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8)
         let trailing = descriptionInput.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8)
         descHeight = descriptionInput.heightAnchor.constraint(equalToConstant: 60)

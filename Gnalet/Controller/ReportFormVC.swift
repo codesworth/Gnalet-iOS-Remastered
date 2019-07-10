@@ -13,13 +13,14 @@ import GoogleMaps.GMSAddress
 class ReportFormVC: UIViewController {
 
     //MARK:- Init
-    init(type:Report.Types) {
+    init(type:Report.Types, category:String) {
         self.type = type
+        self.category = category
         super.init(nibName: nil, bundle: nil)
     }
     
     private var coordinate:CLLocationCoordinate2D?
-    
+    private var category:String!
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
@@ -31,6 +32,11 @@ class ReportFormVC: UIViewController {
         return form
     }()
     
+    private lazy var vehicularForm:VehicularReportView = {
+        let form = VehicularReportView(frame: .zero)
+        return form
+    }()
+    
     private lazy var mapView:Mapview = { [unowned self] by in
         let map = Mapview(frame: view.frame, coordinate: coordinate!)
         return map
@@ -39,19 +45,37 @@ class ReportFormVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        view.addSubview(generalForm)
-        generalForm.navigator = navigationControllerg
+        setupView()
         subscribeTo(subscription: .launchMaps, selector: #selector(launchMaps(_:)))
         subscribeTo(subscription: .mapAdjustedCoordinates, selector: #selector(mapAdjustedCoordinates(_:)))
-        generalForm.layout{
-            $0.top == view.topAnchor
-            $0.bottom == view.bottomAnchor
-            $0.leading == view.leadingAnchor
-            $0.trailing == view.trailingAnchor
-        }
+        
         // Do any additional setup after loading the view.
     }
     
+    
+    func setupView(){
+        if type == .vehicular{
+            view.addSubview(vehicularForm)
+            vehicularForm.navigator = navigationController
+            vehicularForm.category = category
+            vehicularForm.layout{
+                $0.top == view.topAnchor
+                $0.bottom == view.bottomAnchor
+                $0.leading == view.leadingAnchor
+                $0.trailing == view.trailingAnchor
+            }
+        }else{
+            view.addSubview(generalForm)
+            generalForm.navigator = navigationController
+            generalForm.category = self.category
+            generalForm.layout{
+                $0.top == view.topAnchor
+                $0.bottom == view.bottomAnchor
+                $0.leading == view.leadingAnchor
+                $0.trailing == view.trailingAnchor
+            }
+        }
+    }
     
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -75,7 +99,11 @@ class ReportFormVC: UIViewController {
             self.mapView.removeFromSuperview()
             self.mapView.alpha = 1
         }
-        generalForm.locationInput.address = address
+        if type == .general{
+            generalForm.locationInput.address = address
+        }else{
+            vehicularForm.locationInput.address = address
+        }
     }
 
     /*

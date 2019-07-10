@@ -31,7 +31,6 @@ public class ReportCoordinator:NSObject{
     func compose(category:String,
         address:GMSAddress,
         coordinate:CLLocationCoordinate2D,
-        image:UIImage?,
         reporter:String,
         region:String,
         extras:Report.Extras?,

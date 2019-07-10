@@ -25,6 +25,7 @@
 		38070E1022C80607006935F2 /* HomeOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38070E0F22C80607006935F2 /* HomeOptions.swift */; };
 		38070E1322C8B966006935F2 /* BasicTextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38070E1222C8B966006935F2 /* BasicTextInput.swift */; };
 		38070E1522C8C315006935F2 /* ReportFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38070E1422C8C315006935F2 /* ReportFormVC.swift */; };
+		3824CA7322D5F55B0068A283 /* VehicularReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3824CA7222D5F55B0068A283 /* VehicularReport.swift */; };
 		3835A76022CA744B00521391 /* RegionPickerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3835A75F22CA744B00521391 /* RegionPickerInput.swift */; };
 		3835A76322CA8DD000521391 /* Subscriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3835A76222CA8DD000521391 /* Subscriptions.swift */; };
 		3842158D22CD165A0045E4A6 /* ReportCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3842158C22CD165A0045E4A6 /* ReportCoordinator.swift */; };
@@ -85,6 +86,7 @@
 		38070E0F22C80607006935F2 /* HomeOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeOptions.swift; sourceTree = "<group>"; };
 		38070E1222C8B966006935F2 /* BasicTextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTextInput.swift; sourceTree = "<group>"; };
 		38070E1422C8C315006935F2 /* ReportFormVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportFormVC.swift; sourceTree = "<group>"; };
+		3824CA7222D5F55B0068A283 /* VehicularReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicularReport.swift; sourceTree = "<group>"; };
 		3835A75F22CA744B00521391 /* RegionPickerInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionPickerInput.swift; sourceTree = "<group>"; };
 		3835A76222CA8DD000521391 /* Subscriptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscriptions.swift; sourceTree = "<group>"; };
 		3842158C22CD165A0045E4A6 /* ReportCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCoordinator.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				38B76AF522C819A000AB68D8 /* CategoryCell.swift */,
 				38B76AF622C819A000AB68D8 /* CategoryCell.xib */,
 				38801AE122CA486C001CABA2 /* GeneralReportView.swift */,
+				3824CA7222D5F55B0068A283 /* VehicularReport.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -561,6 +564,7 @@
 				38801ADE22C90C61001CABA2 /* TextViewInput.swift in Sources */,
 				38BD4FDC22D11F2D002C974F /* Constants.swift in Sources */,
 				38070DE222C7FE32006935F2 /* AppDelegate.swift in Sources */,
+				3824CA7322D5F55B0068A283 /* VehicularReport.swift in Sources */,
 				38070E1522C8C315006935F2 /* ReportFormVC.swift in Sources */,
 				3804A3FB22CCB4E300669133 /* CGSize+Literals.swift in Sources */,
 				38070E0A22C80172006935F2 /* HomeOptionsCell.swift in Sources */,

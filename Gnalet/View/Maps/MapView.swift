@@ -60,7 +60,7 @@ class Mapview:UIView{
     
     private lazy var detailCard:DetailCard = {
         let height = UIScreen.height + 50
-        let card  = DetailCard(frame: [25,height,UIScreen.width - 25,185])
+        let card  = DetailCard(frame: [0,height,UIScreen.width ,185])
         return card
     }()
     

@@ -81,8 +81,15 @@ extension IssueSelectVC:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cat = categories[indexPath.row]
-        let vc = ReportFormVC(type: .general)
-        vc.navigationItem.title = cat.header
-        navigationController?.pushViewController(vc, animated: true)
+        if indexPath.row == 0{
+            let vc = ReportFormVC(type: .vehicular, category:cat.header)
+            vc.navigationItem.title = cat.header
+            navigationController?.pushViewController(vc, animated: true)
+        }else{
+            let vc = ReportFormVC(type: .general, category: cat.header)
+            vc.navigationItem.title = cat.header
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        
     }
 }
