@@ -124,6 +124,11 @@ extension BasicTextInput:UITextFieldDelegate{
         }, completion: nil)
     }
     
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.endEditing(true )
+        return true
+    }
 
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

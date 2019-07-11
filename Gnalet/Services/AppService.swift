@@ -80,4 +80,8 @@ class AppService {
             
         }
     }
+    
+    static func updateLocationOnStart(){
+        UIDevice.current
+    }
 }

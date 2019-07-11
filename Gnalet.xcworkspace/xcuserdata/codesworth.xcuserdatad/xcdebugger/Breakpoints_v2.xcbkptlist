@@ -21,6 +21,7 @@
             landmarkType = "7">
             <Locations>
                <Location
+                  uuid = "BE0244B8-6027-4849-80F4-ACD8E53ED3E7 - 5cdb4532f1a35598"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -28,14 +29,14 @@
                   moduleName = "Gnalet"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/codesworth/Development/Projects/Gnalet%20Project/Gnalet/Gnalet/View/Maps/MapView.swift"
-                  timestampString = "584485813.489608"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "89"
                   endingLineNumber = "89"
-                  offsetFromSymbolStart = "83">
+                  offsetFromSymbolStart = "80">
                </Location>
                <Location
+                  uuid = "BE0244B8-6027-4849-80F4-ACD8E53ED3E7 - e037307fdb4543cf"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -43,12 +44,11 @@
                   moduleName = "Gnalet"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/codesworth/Development/Projects/Gnalet%20Project/Gnalet/Gnalet/View/Maps/MapView.swift"
-                  timestampString = "584485813.494952"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "90"
                   endingLineNumber = "90"
-                  offsetFromSymbolStart = "57">
+                  offsetFromSymbolStart = "164">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -87,6 +87,7 @@
             landmarkType = "7">
             <Locations>
                <Location
+                  uuid = "7041631F-3FD7-414C-A266-F6F0442FFF47 - e037307fdb4543cf"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -94,14 +95,14 @@
                   moduleName = "Gnalet"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/codesworth/Development/Projects/Gnalet%20Project/Gnalet/Gnalet/View/Maps/MapView.swift"
-                  timestampString = "584485813.524677"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "94"
                   endingLineNumber = "94"
-                  offsetFromSymbolStart = "531">
+                  offsetFromSymbolStart = "620">
                </Location>
                <Location
+                  uuid = "7041631F-3FD7-414C-A266-F6F0442FFF47 - 6216802bdc4a540b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -109,12 +110,11 @@
                   moduleName = "Gnalet"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/codesworth/Development/Projects/Gnalet%20Project/Gnalet/Gnalet/View/Maps/MapView.swift"
-                  timestampString = "584485813.528777"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "95"
                   endingLineNumber = "95"
-                  offsetFromSymbolStart = "22">
+                  offsetFromSymbolStart = "28">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -338,6 +338,38 @@
             endingLineNumber = "25"
             landmarkName = "toggletint"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "402436CB-7DAB-48BB-B5D1-23F7FCC4E9F5 - 505be44754505f7c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gnalet.LocationTextinput.(toggletint in _BDCCCAE8BBC74A3F8D68650323E75F8E).modify : Swift.Bool"
+                  moduleName = "Gnalet"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/codesworth/Development/Projects/Gnalet%20Project/Gnalet/Gnalet/View/Forms/LocationTextinput.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "402436CB-7DAB-48BB-B5D1-23F7FCC4E9F5 - 7bcfd282344caa10"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gnalet.LocationTextinput.(toggletint in _BDCCCAE8BBC74A3F8D68650323E75F8E).modify : Swift.Bool with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Gnalet"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/codesworth/Development/Projects/Gnalet%20Project/Gnalet/Gnalet/View/Forms/LocationTextinput.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -408,6 +440,7 @@
             landmarkType = "7">
             <Locations>
                <Location
+                  uuid = "170E5D6F-928C-43ED-A8D1-236A944EB087 - e962ca6dd8332293"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -415,14 +448,14 @@
                   moduleName = "Gnalet"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/codesworth/Development/Projects/Gnalet%20Project/Gnalet/Gnalet/View/Forms/BasicTextInput.swift"
-                  timestampString = "584485813.709422"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "114"
                   endingLineNumber = "114"
-                  offsetFromSymbolStart = "20">
+                  offsetFromSymbolStart = "68">
                </Location>
                <Location
+                  uuid = "170E5D6F-928C-43ED-A8D1-236A944EB087 - 6210ccfbfe30e376"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -430,14 +463,45 @@
                   moduleName = "Gnalet"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/codesworth/Development/Projects/Gnalet%20Project/Gnalet/Gnalet/View/Forms/BasicTextInput.swift"
-                  timestampString = "584485813.715445"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "115"
                   endingLineNumber = "115"
-                  offsetFromSymbolStart = "22">
+                  offsetFromSymbolStart = "52">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D8651655-19FD-434C-9AF6-08EF9D8B023F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gnalet/View/Forms/BasicTextInput.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "textFieldShouldReturn(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C7367E73-62DC-4766-A418-C96E027BADD6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gnalet/View/Forms/BasicTextInput.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "textFieldShouldReturn(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
